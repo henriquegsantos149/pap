@@ -23,7 +23,8 @@ const modules = [
       "1.4 Seleção Manual e por Localização",
       "1.5 Seleção por Valores e Expressões",
       "1.6 Filtro de feições (Definition Query / Query Builder)",
-      "1.7 Medições práticas (comprimentos, áreas e ângulos)"
+      "1.7 Medições práticas (comprimentos, áreas e ângulos)",
+      "✏️ Exercícios práticos"
     ],
     slides: [2]
   },
@@ -40,7 +41,9 @@ const modules = [
       "2.5 Importando dados de uma WMS/WFS",
       "2.6 Trabalhando com GeoPackage (.gpkg)",
       "2.7 Por dentro da Tabela de Atributos",
-      "2.8 Inserindo Fotos na Tabela de Atributos"
+      "2.8 Inserindo Fotos na Tabela de Atributos",
+      "✏️ Exercícios práticos",
+      "✅ Resolução comentada do Exercício"
     ],
     slides: [2]
   },
@@ -56,7 +59,9 @@ const modules = [
       "3.4 Mesclagem de Camadas e de Atributos (Merge)",
       "3.5 Ferramentas de Edição Vetorial Avançada",
       "3.6 Georreferenciamento de Imagens",
-      "Extra: Cálculos de áreas em várias Zonas UTM (Albers)"
+      "Extra: Cálculos de áreas em várias Zonas UTM (Albers)",
+      "✏️ Exercícios práticos",
+      "✅ Resolução comentada do Exercício"
     ],
     slides: [3]
   },
@@ -70,7 +75,9 @@ const modules = [
       "4.2 Símbolos Graduados",
       "4.3 Centróides e Símbolos Graduados Proporcionais",
       "4.4 Simbologia Baseada em Regras",
-      "4.5 Importando e Exportando Estilos"
+      "4.5 Importando e Exportando Estilos",
+      "✏️ Exercícios práticos",
+      "✅ Resolução comentada do Exercício"
     ],
     slides: [3]
   },
@@ -85,7 +92,9 @@ const modules = [
       "5.3 Reposicionamento de rótulos",
       "5.4 Salvando estilos de rótulo (Style Manager)",
       "5.5 Regras e Expressões",
-      "5.6 Etiquetas e Anotações"
+      "5.6 Etiquetas e Anotações",
+      "✏️ Exercícios práticos",
+      "✅ Resolução comentada do Exercício"
     ],
     slides: [3]
   },
@@ -101,7 +110,8 @@ const modules = [
       "6.4 Declividade (Slope)",
       "6.5 Orientação de Encostas (Aspect)",
       "6.6 Curvatura (Perfil e Tangencial)",
-      "6.7 Gerando Curvas de Nível a partir do MDE"
+      "6.7 Gerando Curvas de Nível a partir do MDE",
+      "✅ Resolução comentada do Exercício"
     ],
     slides: [4]
   },
@@ -146,7 +156,8 @@ const modules = [
       "9.7 Rede de Drenagem e Classificação dos Corpos Hídricos",
       "9.8 Definição do Exutório e Geração da Bacia de Drenagem",
       "9.9 Vetorização dos Trechos de Drenagem",
-      "9.10 Map Design & Layout do Mapa de Área de Contribuição"
+      "9.10 Map Design & Layout do Mapa de Área de Contribuição",
+      "✏️ Exercícios práticos"
     ],
     slides: [5]
   },
@@ -205,7 +216,8 @@ const modules = [
       "1.5 Seleção por Atributos",
       "1.6 Definition Query (Filtros avançados)",
       "1.7 Ferramenta Measure (Medição)",
-      "1.8 Locate para identificação de locais e atributos"
+      "1.8 Locate para identificação de locais e atributos",
+      "✏️ Exercícios práticos"
     ],
     slides: [7]
   },
@@ -218,7 +230,8 @@ const modules = [
       "2.1 Importação de Dados do Excel",
       "2.2 Bancos de Dados Geográficos Gratuitos",
       "2.3 Geodatabase - O que é e quais as vantagens",
-      "2.4 Imagem como Atributo na Tabela"
+      "2.4 Imagem como Atributo na Tabela",
+      "✅ Resolução comentada do Exercício"
     ],
     slides: [7]
   },
@@ -235,7 +248,8 @@ const modules = [
       "3.5 Ferramentas de Edição Vetorial",
       "3.6 Georreferenciamento de Imagens",
       "3.7 Georreferenciando DWG e Shapefile",
-      "3.8 Atribuindo Dimensões (Estilo CAD)"
+      "3.8 Atribuindo Dimensões (Estilo CAD)",
+      "✏️ Exercícios práticos"
     ],
     slides: [8]
   },
@@ -248,7 +262,8 @@ const modules = [
       "4.1 Simbologia de Valores Únicos e Paleta de Cores",
       "4.2 Simbologia por Quantidade (Rampas de Cores)",
       "4.3 Simbologias em dados Raster",
-      "4.4 Técnicas Avançadas de Simbologia e Efeitos Visuais"
+      "4.4 Técnicas Avançadas de Simbologia e Efeitos Visuais",
+      "✅ Resolução comentada do Exercício"
     ],
     slides: [8]
   },
@@ -262,7 +277,9 @@ const modules = [
       "5.2 Descobrindo e inserindo fontes externas",
       "5.3 Anotação e Reposicionamento Manual das Etiquetas",
       "5.4 Texto como elemento Gráfico",
-      "5.5 Expressões (scripts) para Labels dinâmicos"
+      "5.5 Expressões (scripts) para Labels dinâmicos",
+      "✏️ Exercícios práticos",
+      "✅ Resolução comentada do Exercício"
     ],
     slides: [8]
   },
@@ -277,7 +294,8 @@ const modules = [
       "6.3 Conhecendo e explorando o Living Atlas",
       "6.4 Relevo Sombreado (Hillshade)",
       "6.5 Declividade (Slope)",
-      "6.6 Orientação e Curvatura (Aspect e Curvature)"
+      "6.6 Orientação e Curvatura (Aspect e Curvature)",
+      "✏️ Exercícios práticos"
     ],
     slides: [9]
   },
@@ -293,7 +311,8 @@ const modules = [
       "7.4 Visualização 3D do terreno",
       "7.5 Simulação de Inundação (Criando Animações de Cheia)",
       "7.6 Cálculo de Corte e Aterro (Volume)",
-      "7.7 Visualização de Dados de Empreendimentos em 3D"
+      "7.7 Visualização de Dados de Empreendimentos em 3D",
+      "✏️ Exercícios práticos"
     ],
     slides: [9]
   },
