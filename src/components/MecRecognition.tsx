@@ -8,25 +8,22 @@ export default function MecRecognition() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[var(--color-brand-primary)]/5 rounded-full blur-[120px] pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="bg-white/5 border border-white/10 rounded-3xl p-8 md:p-16 shadow-2xl">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
-            {/* Left Column: Image / Certificate Logo */}
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="lg:col-span-4 flex justify-center"
-            >
-              <div className="relative group p-4 bg-black/40 border border-white/10 rounded-2xl shadow-inner max-w-[280px]">
-                <img 
-                  src={`${import.meta.env.BASE_URL}reconhecido_mec.png`} 
-                  alt="Certificado reconhecido pelo MEC" 
-                  className="w-full h-auto object-contain drop-shadow-[0_10px_20px_rgba(15,166,10,0.2)]"
-                />
-              </div>
-            </motion.div>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          
+          {/* Left Column: Image / Certificate Logo */}
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="lg:col-span-4 flex justify-center"
+          >
+            <img 
+              src={`${import.meta.env.BASE_URL}reconhecido_mec.png`} 
+              alt="Certificado reconhecido pelo MEC" 
+              className="w-full max-w-[260px] h-auto object-contain drop-shadow-[0_10px_20px_rgba(15,166,10,0.2)]"
+            />
+          </motion.div>
 
             {/* Right Column: Information */}
             <motion.div 
@@ -68,10 +65,8 @@ export default function MecRecognition() {
                 </div>
               </div>
             </motion.div>
-
           </div>
         </div>
-      </div>
-    </section>
+      </section>
   );
 }
