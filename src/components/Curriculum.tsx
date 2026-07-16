@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ChevronDown, CheckCircle, Image as ImageIcon, X, Layers, Globe, Award, Database } from 'lucide-react';
+import { ChevronDown, CheckCircle, Layers, Globe, Award, Database } from 'lucide-react';
 
 const categories = [
   { id: 'qgis', label: 'QGIS', icon: Globe },
@@ -733,7 +733,7 @@ const modules = [
 export default function Curriculum() {
   const [activeTab, setActiveTab] = useState('qgis');
   const [openIndex, setOpenIndex] = useState<number | null>(null);
-  const [activeSlide, setActiveSlide] = useState<string | null>(null);
+
 
   // Filter modules by active category tab
   const filteredModules = modules.filter(mod => mod.category === activeTab);
@@ -851,38 +851,6 @@ export default function Curriculum() {
                       </div>
                     </div>
 
-                    {/* Visual Slide Thumbnails */}
-                    {mod.slides && mod.slides.length > 0 && (
-                      <div className="mt-4 pt-4 border-t border-white/5">
-                        <strong className="text-white uppercase text-xs tracking-widest flex items-center gap-1.5 mb-3 font-primary">
-                          <ImageIcon className="w-3.5 h-3.5 text-[var(--color-brand-accent)]" />
-                          Slides e Material Visual:
-                        </strong>
-                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                          {mod.slides.map((slideNum) => {
-                            const slidePath = `${import.meta.env.BASE_URL}curriculum/slide-${slideNum}.png`;
-                            return (
-                              <button
-                                key={slideNum}
-                                onClick={() => setActiveSlide(slidePath)}
-                                className="group/slide relative border border-white/10 rounded-lg overflow-hidden aspect-[4/3] bg-black hover:border-[var(--color-brand-primary)]/40 transition-colors cursor-pointer"
-                              >
-                                <img 
-                                  src={slidePath} 
-                                  alt={`Slide ${slideNum}`} 
-                                  className="w-full h-full object-cover opacity-60 group-hover/slide:opacity-100 transition-opacity duration-300"
-                                />
-                                <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-100 group-hover/slide:bg-black/10 transition-colors">
-                                  <span className="text-[10px] uppercase font-bold text-white tracking-widest bg-black/60 px-2 py-0.5 rounded-full border border-white/10 group-hover/slide:bg-[var(--color-brand-primary)] group-hover/slide:text-[var(--color-brand-dark)] transition-colors">
-                                    Ver Slide {slideNum}
-                                  </span>
-                                </div>
-                              </button>
-                            );
-                          })}
-                        </div>
-                      </div>
-                    )}
 
                   </div>
                 </div>
@@ -893,27 +861,7 @@ export default function Curriculum() {
 
       </div>
 
-      {/* Lightbox for Slides Zoom */}
-      {activeSlide && (
-        <div 
-          onClick={() => setActiveSlide(null)}
-          className="fixed inset-0 bg-black/95 z-[100] flex items-center justify-center p-4 backdrop-blur-sm cursor-zoom-out"
-        >
-          <button 
-            onClick={() => setActiveSlide(null)}
-            className="absolute top-6 right-6 p-2 rounded-full bg-white/5 border border-white/10 text-white hover:bg-white/20 transition-colors cursor-pointer"
-          >
-            <X className="w-6 h-6" />
-          </button>
-          <div className="max-w-5xl max-h-[85vh] overflow-hidden rounded-xl border border-white/10 bg-black/50 shadow-2xl flex items-center justify-center">
-            <img 
-              src={activeSlide} 
-              alt="Curriculum Slide Zoomed" 
-              className="w-auto h-auto max-w-full max-h-[80vh] object-contain"
-            />
-          </div>
-        </div>
-      )}
+
     </section>
   );
 }
