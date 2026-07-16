@@ -810,7 +810,14 @@ export default function Curriculum() {
                   <ChevronDown className={`w-5 h-5 md:w-6 md:h-6 shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180 text-[var(--color-brand-accent)]' : 'text-white/40 group-hover:text-white/60'}`} />
                 </button>
                 
-                <div className={`overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? 'max-h-[9999px] opacity-100' : 'max-h-0 opacity-0'}`}>
+                <div 
+                  style={{ 
+                    maxHeight: isOpen ? '99999px' : '0', 
+                    overflow: 'hidden', 
+                    transition: 'max-height 0.6s ease-in-out, opacity 0.35s ease-in-out',
+                    opacity: isOpen ? 1 : 0 
+                  }}
+                >
                   <div className="px-6 pb-6 md:px-8 md:pb-8 pt-0 md:pl-26 space-y-5 border-t border-white/5">
                     
                     {/* Objetivo */}
