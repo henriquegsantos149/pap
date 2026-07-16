@@ -7,7 +7,7 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-[var(--color-brand-dark)]/90 backdrop-blur-md border-b border-white/10 py-2">
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center gap-4">
-        {/* Logo */}
+        {/* Left Side: Logo Ambiental Pro */}
         <div className="flex justify-start flex-1">
           <a 
             href="#" 
@@ -18,9 +18,9 @@ export default function Header() {
             className="cursor-pointer"
           >
             <img 
-              src={`${import.meta.env.BASE_URL}header-logo.png`} 
-              alt="PAP & QGIS Logo" 
-              className="h-10 md:h-14 w-auto object-contain py-0.5"
+              src={`${import.meta.env.BASE_URL}logo-ambientalpro.webp`} 
+              alt="Ambiental Pro Logo" 
+              className="h-8 md:h-12 w-auto object-contain py-0.5"
             />
           </a>
         </div>
@@ -42,8 +42,14 @@ export default function Header() {
           <a href="#perguntas-frequentes" className="text-xs font-medium hover:text-[var(--color-brand-accent)] transition-colors uppercase tracking-widest whitespace-nowrap">Dúvidas</a>
         </nav>
 
-        {/* Right Spacer for Desktop Centering */}
-        <div className="hidden md:block flex-1"></div>
+        {/* Right Side: PAP & QGIS Logos */}
+        <div className="hidden md:flex justify-end flex-1">
+          <img 
+            src={`${import.meta.env.BASE_URL}header-logo.png`} 
+            alt="PAP & QGIS Logos" 
+            className="h-10 md:h-12 w-auto object-contain py-0.5"
+          />
+        </div>
       </div>
 
       {/* Navigation - Mobile Menu Dropdown */}
