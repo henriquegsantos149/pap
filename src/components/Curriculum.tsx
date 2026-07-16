@@ -1,61 +1,132 @@
 import { useState } from 'react';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, CheckCircle, Image as ImageIcon, X } from 'lucide-react';
 
 const modules = [
   {
     title: "Módulo 1: Introdução ao QGIS e Geoprocessamento",
     objective: "Introduzir os fundamentos da cartografia e do geoprocessamento, configurando o ambiente do software QGIS para início seguro dos trabalhos práticos.",
-    practicalFocus: "Domínio da interface do QGIS, configurações essenciais do projeto, conceitos práticos de datum (SIRGAS 2000), sistemas de coordenadas (GCS vs UTM) e importação inicial de dados espaciais."
+    practicalFocus: "Domínio da interface do QGIS, configurações essenciais do projeto, conceitos práticos de datum (SIRGAS 2000), sistemas de coordenadas (GCS vs UTM) e importação inicial de dados espaciais.",
+    submodules: [
+      "Alinhamento e Nivelamento da Rota",
+      "Instalação da versão LTR do QGIS",
+      "Instalação de complementos essenciais",
+      "Conceito de SIRGAS2000 e Sistemas de Projeções (UTM e Geográficas)"
+    ],
+    slides: [1, 2, 3, 4]
   },
   {
     title: "Módulo 2: Criação e Vetorização de Dados Espaciais",
     objective: "Desenvolver habilidades sólidas na criação, vetorização e edição de arquivos vetoriais utilizando padrões profissionais da indústria.",
-    practicalFocus: "Modelagem de dados com GeoPackages e Shapefiles, edição de geometrias (pontos, linhas e polígonos), preenchimento estratégico da tabela de atributos e ferramentas de aderência (snapping)."
+    practicalFocus: "Modelagem de dados com GeoPackages e Shapefiles, edição de geometrias (pontos, linhas e polígonos), preenchimento estratégico da tabela de atributos e ferramentas de aderência (snapping).",
+    submodules: [
+      "Criação de arquivos Shapefile e GeoPackage",
+      "Uso da Barra de Ferramentas de Aderência (Snapping)",
+      "Vetorização manual e avançada de polígonos, linhas e pontos",
+      "Edição topológica e correção de geometrias inválidas"
+    ],
+    slides: [5, 6, 7, 8]
   },
   {
     title: "Módulo 3: Simbologia e Rótulos Avançados",
     objective: "Aprender a representar visualmente os dados espaciais de forma clara, estética e profissional para garantir fácil interpretação em relatórios técnicos.",
-    practicalFocus: "Configuração de simbologias categorizadas, graduadas e baseadas em regras; criação de rótulos dinâmicos inteligentes que evitam sobreposição e ajustam-se automaticamente à escala."
+    practicalFocus: "Configuração de simbologias categorizadas, graduadas e baseadas em regras; criação de rótulos dinâmicos inteligentes que evitam sobreposição e ajustam-se automaticamente à escala.",
+    submodules: [
+      "Estilos de Simbologia (Categorizado, Graduado e Baseado em Regras)",
+      "Uso da biblioteca de símbolos oficiais da Ambiental Pro",
+      "Configuração de Rótulos Simples e Baseados em Fórmulas",
+      "Diagramação visual e hierarquia de informações no mapa"
+    ],
+    slides: [9, 10, 11, 12]
   },
   {
     title: "Módulo 4: Sensoriamento Remoto e Imagens de Satélite",
     objective: "Dominar o acesso, download e o processamento de imagens provenientes dos principais satélites do mundo para fins de monitoramento ambiental.",
-    practicalFocus: "Operação com sensores orbitais (Landsat, Sentinel, Planet), composições coloridas de bandas (cor verdadeira e falsa cor) e cálculo prático de índices espectrais como NDVI (vegetação) e NDWI (água)."
+    practicalFocus: "Operação com sensores orbitais (Landsat, Sentinel, Planet), composições coloridas de bandas (cor verdadeira e falsa cor) e cálculo prático de índices espectrais como NDVI (vegetação) e NDWI (água).",
+    submodules: [
+      "Acesso aos portais de download (USGS, Copernicus, Planet)",
+      "Composição de Bandas Coloridas (Cor Verdadeira, Infravermelho)",
+      "Cálculo prático de Índices Espectrais (NDVI e NDWI)",
+      "Mapeamento temporal de desmatamento e cicatrizes de queimadas"
+    ],
+    slides: [13, 14, 15, 16]
   },
   {
     title: "Módulo 5: Processamento Digital de Imagens e Dados Raster",
     objective: "Explorar o potencial dos dados raster e de altimetria para entender o relevo de uma região e produzir análises físicas complexas.",
-    practicalFocus: "Processamento de Modelos Digitais de Elevação (MDE), geração automática de curvas de nível, cálculo de mapas de declividade (slope), orientação de vertentes (aspect) e relevo sombreado (hillshade)."
+    practicalFocus: "Processamento de Modelos Digitais de Elevação (MDE), geração automática de curvas de nível (intervalos customizados), cálculo de mapas de declividade (slope), orientação de vertentes (aspect) e relevo sombreado (hillshade).",
+    submodules: [
+      "Importação de dados SRTM e Modelos Digitais de Elevação",
+      "Geração automatizada de curvas de nível (intervalos customizados)",
+      "Cálculo de Declividade (Slope) em graus e porcentagem",
+      "Geração de Relevo Sombreado (Hillshade) para representação 3D"
+    ],
+    slides: [17, 18, 19, 20]
   },
   {
     title: "Módulo 6: Ferramentas de Análise Espacial Avançada",
     objective: "Aprender a cruzar diferentes camadas de informação geográfica para responder a perguntas complexas de planejamento e tomada de decisões ecológicas.",
-    practicalFocus: "Execução de operações de geoprocessamento como buffers (áreas de influência), intersecções, uniões, recortes espaciais e análise de proximidade espacial."
+    practicalFocus: "Execução de operações de geoprocessamento como buffers (áreas de influência), intersecções, uniões, recortes espaciais e análise de proximidade espacial.",
+    submodules: [
+      "Criação de buffers e áreas de influência (raios dinâmicos)",
+      "Operações de Geoprocessamento (Recortar, Interseccionar, Dissolver)",
+      "Análise de calor (Kernel Density) para distribuição de dados",
+      "Interpolação de dados (IDW / Spline) aplicados ao meio físico"
+    ],
+    slides: [21, 22, 23, 24]
   },
   {
     title: "Módulo 7: Cartografia Temática e Layout de Mapas Profissionais",
     objective: "Desenvolver mapas finais prontos para entrega a órgãos ambientais e clientes, contendo todos os elementos normativos exigidos por lei.",
-    practicalFocus: "Criação de templates de impressão, inserção dinâmica de grade de coordenadas, escalas gráficas, legendas configuradas, rosas dos ventos, mapas de localização secundários e automação com a ferramenta Atlas."
+    practicalFocus: "Criação de templates de impressão, inserção dinâmica de grade de coordenadas, escalas gráficas, legendas configuradas, rosas dos ventos, mapas de localização secundários e automação com a ferramenta Atlas.",
+    submodules: [
+      "Configuração do Gerenciador de Layout (Folhas A4, A3, A0)",
+      "Inserção de Grade de Coordenadas e Escala Dinâmica",
+      "Criação de Legendas Inteligentes e Tabela de Atributos no Layout",
+      "Automação de geração de pranchas com a ferramenta Atlas"
+    ],
+    slides: [25, 26, 27, 28]
   },
   {
     title: "Módulo 8: Projetos Ambientais Práticos: Delimitações de APP e Uso do Solo",
     objective: "Conectar o geoprocessamento à legislação ambiental brasileira por meio de estudos de caso reais do mercado de trabalho de consultoria.",
-    practicalFocus: "Mapeamento automático de Áreas de Preservação Permanente (APP) de cursos d'água e topo de morro, delimitação de Reserva Legal e classificação supervisionada para mapas de uso e ocupação do solo."
+    practicalFocus: "Mapeamento automático de Áreas de Preservação Permanente (APP) de cursos d'água e topo de morro, delimitação de Reserva Legal e classificação supervisionada para mapas de uso e ocupação do solo.",
+    submodules: [
+      "Delimitação automática de Áreas de Preservação Permanente (APP)",
+      "Cálculo de Reserva Legal e Áreas Consolidadas",
+      "Geração de mapas de Uso e Ocupação do Solo para licenciamento",
+      "Integração de arquivos de Drones (Ortofotos e Modelos de Superfície)"
+    ],
+    slides: [29, 30, 31, 32]
   },
   {
     title: "Módulo 9: Cadastro Ambiental Rural (CAR) e Georreferenciamento",
     objective: "Aprender o passo a passo técnico para realizar o Cadastro Ambiental Rural e preparar arquivos para retificação fundiária.",
-    practicalFocus: "Preparação de shapefiles dentro das exigências do Sistema SICAR, importação de dados de GPS de navegação e geodésico, e estruturação de dados de agrimensura legal."
+    practicalFocus: "Preparação de shapefiles dentro das exigências do Sistema SICAR, importação de dados de GPS de navegação e geodésico, e estruturação de dados de agrimensura legal.",
+    submodules: [
+      "Importação de dados de receptores GNSS e planilhas de campo",
+      "Geração do arquivo de shapefiles exigidos pelo sistema SICAR",
+      "Elaboração de Planta e Memorial Descritivo de imóveis rurais",
+      "Retificação de limites e análise de sobreposições de glebas"
+    ],
+    slides: [33, 34, 35]
   },
   {
     title: "Módulo 10: Automatização de Rotinas no QGIS (Introdução a PyQGIS)",
     objective: "Elevar o nível profissional aprendendo a automatizar tarefas demoradas e repetitivas para otimizar a velocidade de entrega dos projetos.",
-    practicalFocus: "Introdução à linguagem Python rodando dentro do console do QGIS, uso de scripts prontos para processamentos em lote e otimização extrema de fluxos de geoprocessamento."
+    practicalFocus: "Introdução à linguagem Python rodando dentro do console do QGIS, uso de scripts prontos para processamentos em lote e otimização extrema de fluxos de geoprocessamento.",
+    submodules: [
+      "Introdução ao console Python dentro do QGIS",
+      "Uso da biblioteca PyQGIS para carregar e manipular camadas",
+      "Criação de scripts básicos para automatizar tarefas repetitivas",
+      "Execução de processos em lote (Batch Processing) no QGIS"
+    ],
+    slides: [36, 37]
   }
 ];
 
 export default function Curriculum() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [activeSlide, setActiveSlide] = useState<string | null>(null);
 
   return (
     <section id="conteudo" className="py-24 bg-[var(--color-brand-dark)] relative overflow-hidden border-t border-white/5">
@@ -73,7 +144,7 @@ export default function Curriculum() {
             O que você vai <span className="text-brand-gradient">aprender</span>?
           </h2>
           <p className="text-[var(--color-brand-light)]/70 max-w-2xl mx-auto font-secondary text-sm md:text-base mt-4">
-            10 módulos detalhados e estruturados metodologicamente para levar você do absoluto zero ao nível de analista sênior.
+            10 módulos detalhados, contendo todos os módulos principais e sub-módulos práticos.
           </p>
         </div>
 
@@ -100,7 +171,7 @@ export default function Curriculum() {
                   <ChevronDown className={`w-5 h-5 md:w-6 md:h-6 shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180 text-[var(--color-brand-accent)]' : 'text-white/40 group-hover:text-white/60'}`} />
                 </button>
                 
-                <div className={`overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`}>
+                <div className={`overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? 'max-h-[1200px] opacity-100' : 'max-h-0 opacity-0'}`}>
                   <div className="px-6 pb-6 md:px-8 md:pb-8 pt-0 md:pl-26 space-y-5 border-t border-white/5">
                     
                     {/* Objetivo */}
@@ -121,6 +192,52 @@ export default function Curriculum() {
                       </p>
                     </div>
 
+                    {/* Submódulos (Aulas/Tópicos) */}
+                    <div className="mt-4 pt-4 border-t border-white/5">
+                      <strong className="text-white uppercase text-xs tracking-widest block mb-3 font-primary">Tópicos e Aulas Práticas:</strong>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        {mod.submodules.map((sub, sIdx) => (
+                          <div key={sIdx} className="flex items-start gap-2 text-xs md:text-sm text-[var(--color-brand-light)]/70 font-secondary">
+                            <CheckCircle className="w-4 h-4 text-[var(--color-brand-primary)] shrink-0 mt-0.5" />
+                            <span>{sub}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Visual Slide Thumbnails */}
+                    {mod.slides && mod.slides.length > 0 && (
+                      <div className="mt-4 pt-4 border-t border-white/5">
+                        <strong className="text-white uppercase text-xs tracking-widest flex items-center gap-1.5 mb-3 font-primary">
+                          <ImageIcon className="w-3.5 h-3.5 text-[var(--color-brand-accent)]" />
+                          Slides e Material Visual:
+                        </strong>
+                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                          {mod.slides.map((slideNum) => {
+                            const slidePath = `${import.meta.env.BASE_URL}curriculum/slide-${slideNum}.png`;
+                            return (
+                              <button
+                                key={slideNum}
+                                onClick={() => setActiveSlide(slidePath)}
+                                className="group/slide relative border border-white/10 rounded-lg overflow-hidden aspect-[4/3] bg-black hover:border-[var(--color-brand-primary)]/40 transition-colors cursor-pointer"
+                              >
+                                <img 
+                                  src={slidePath} 
+                                  alt={`Slide ${slideNum}`} 
+                                  className="w-full h-full object-cover opacity-60 group-hover/slide:opacity-100 transition-opacity duration-300"
+                                />
+                                <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-100 group-hover/slide:bg-black/10 transition-colors">
+                                  <span className="text-[10px] uppercase font-bold text-white tracking-widest bg-black/60 px-2 py-0.5 rounded-full border border-white/10 group-hover/slide:bg-[var(--color-brand-primary)] group-hover/slide:text-[var(--color-brand-dark)] transition-colors">
+                                    Ver Slide {slideNum}
+                                  </span>
+                                </div>
+                              </button>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    )}
+
                   </div>
                 </div>
               </div>
@@ -129,6 +246,28 @@ export default function Curriculum() {
         </div>
 
       </div>
+
+      {/* Lightbox for Slides Zoom */}
+      {activeSlide && (
+        <div 
+          onClick={() => setActiveSlide(null)}
+          className="fixed inset-0 bg-black/95 z-[100] flex items-center justify-center p-4 backdrop-blur-sm cursor-zoom-out"
+        >
+          <button 
+            onClick={() => setActiveSlide(null)}
+            className="absolute top-6 right-6 p-2 rounded-full bg-white/5 border border-white/10 text-white hover:bg-white/20 transition-colors cursor-pointer"
+          >
+            <X className="w-6 h-6" />
+          </button>
+          <div className="max-w-5xl max-h-[85vh] overflow-hidden rounded-xl border border-white/10 bg-black/50 shadow-2xl flex items-center justify-center">
+            <img 
+              src={activeSlide} 
+              alt="Curriculum Slide Zoomed" 
+              className="w-auto h-auto max-w-full max-h-[80vh] object-contain"
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 }
