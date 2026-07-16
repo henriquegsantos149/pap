@@ -354,7 +354,8 @@ const modules = [
       "10.7 Rede de Drenagem e Classificação dos Corpos Hídricos",
       "10.8 Definição do Exutório e Geração da Bacia de Drenagem",
       "10.9 Suavização de Linhas e Técnicas de Visualização (Map Design)",
-      "10.10 Elaboração de Layout (Montagem do Mapa Final)"
+      "10.10 Elaboração de Layout (Montagem do Mapa Final)",
+      "🎥 Live #042 — Hidrologia: Tutorial Supremo no ArcGIS Pro"
     ],
     slides: [10]
   },
@@ -381,7 +382,8 @@ const modules = [
       "12.2 Fusão com a Pancromática (Pansharpening)",
       "12.3 Composição Falsa Cor",
       "12.4 Índice NDVI",
-      "12.5 Index Database e NDMI"
+      "12.5 Index Database e NDMI",
+      "🎥 Live #072 — Detecção de Mudanças no ArcGIS Pro"
     ],
     slides: [11]
   },
@@ -395,7 +397,10 @@ const modules = [
       "13.2 Classificação Não-Supervisionada",
       "13.3 Classificação Supervisionada",
       "13.4 Classificação baseada em Objeto (OBIA)",
-      "13.5 Juntando as Classes e Calculando a Área do Solo"
+      "13.5 Juntando as Classes e Calculando a Área do Solo",
+      "🎥 Live #060 — Classificação de Imagem para Uso do Solo",
+      "🎥 Live #062 — Deep Learning com Modelos Pré-Treinados no ArcGIS Pro",
+      "🎥 Live #068 — Georreferenciamento e Vetorização no ArcGIS Pro"
     ],
     slides: [11]
   },
@@ -418,7 +423,9 @@ const modules = [
       "2.2 Bancos de Dados grátis online",
       "2.3 Trabalhando com a Tabela de Atributos",
       "2.4 Extraindo dados do OpenStreetMap",
-      "2.5 Adicionando Imagens na Tabela de Atributos"
+      "2.5 Adicionando Imagens na Tabela de Atributos",
+      "✏️ Exercícios práticos",
+      "✅ Resolução comentada do Exercício"
     ],
     slides: [12]
   },
@@ -442,7 +449,8 @@ const modules = [
       "5.1 Introdução aos MDEs",
       "5.2 Hillshade (Sombreamento) e Perfil de Elevação",
       "5.3 Aspect, Slope e 3D no ArcScene",
-      "5.4 Curvas de nível e Viewshed"
+      "5.4 Curvas de nível e Viewshed",
+      "✏️ Exercícios práticos"
     ],
     slides: [13]
   },
@@ -465,7 +473,9 @@ const modules = [
       "8.4 Labelling Avançado (Maplex Engine)",
       "9.1 Traçando bacias hidrográficas do zero",
       "9.2 Vetorizando a rede de drenagem clássica",
-      "9.3 Classificação da Bacia e Balanço Hídrico"
+      "9.3 Classificação da Bacia e Balanço Hídrico",
+      "✏️ Exercícios práticos",
+      "✅ Resolução comentada do Exercício"
     ],
     slides: [14, 15]
   },
@@ -485,7 +495,8 @@ const modules = [
       "12.2 Classificação Supervisionada",
       "12.3 Limpeza e generalização de pixels classificados",
       "12.4 Inserção de elementos extras",
-      "12.5 Cálculo de área e percentual das classes de solo"
+      "12.5 Cálculo de área e percentual das classes de solo",
+      "✏️ Exercícios práticos"
     ],
     slides: [15]
   },
