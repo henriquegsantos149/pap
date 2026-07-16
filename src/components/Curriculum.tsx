@@ -1,8 +1,18 @@
 import { useState } from 'react';
-import { ChevronDown, CheckCircle, Image as ImageIcon, X } from 'lucide-react';
+import { ChevronDown, CheckCircle, Image as ImageIcon, X, Layers, Compass, Globe, Award, Database } from 'lucide-react';
+
+const categories = [
+  { id: 'qgis', label: 'QGIS', icon: Globe },
+  { id: 'arcgis', label: 'ArcGIS Pro', icon: Layers },
+  { id: 'remotesensing', label: 'Sensoriamento & Drones', icon: Compass },
+  { id: 'projects', label: 'Projetos Ambientais', icon: Award },
+  { id: 'programming', label: 'Programação', icon: Database },
+];
 
 const modules = [
+  // CATEGORY: QGIS
   {
+    category: 'qgis',
     title: "Módulo 1: Introdução ao QGIS e Geoprocessamento",
     objective: "Introduzir os fundamentos da cartografia e do geoprocessamento, configurando o ambiente do software QGIS para início seguro dos trabalhos práticos.",
     practicalFocus: "Domínio da interface do QGIS, configurações essenciais do projeto, conceitos práticos de datum (SIRGAS 2000), sistemas de coordenadas (GCS vs UTM) e importação inicial de dados espaciais.",
@@ -15,6 +25,7 @@ const modules = [
     slides: [1, 2, 3, 4]
   },
   {
+    category: 'qgis',
     title: "Módulo 2: Criação e Vetorização de Dados Espaciais",
     objective: "Desenvolver habilidades sólidas na criação, vetorização e edição de arquivos vetoriais utilizando padrões profissionais da indústria.",
     practicalFocus: "Modelagem de dados com GeoPackages e Shapefiles, edição de geometrias (pontos, linhas e polígonos), preenchimento estratégico da tabela de atributos e ferramentas de aderência (snapping).",
@@ -27,6 +38,7 @@ const modules = [
     slides: [5, 6, 7, 8]
   },
   {
+    category: 'qgis',
     title: "Módulo 3: Simbologia e Rótulos Avançados",
     objective: "Aprender a representar visualmente os dados espaciais de forma clara, estética e profissional para garantir fácil interpretação em relatórios técnicos.",
     practicalFocus: "Configuração de simbologias categorizadas, graduadas e baseadas em regras; criação de rótulos dinâmicos inteligentes que evitam sobreposição e ajustam-se automaticamente à escala.",
@@ -39,19 +51,8 @@ const modules = [
     slides: [9, 10, 11, 12]
   },
   {
-    title: "Módulo 4: Sensoriamento Remoto e Imagens de Satélite",
-    objective: "Dominar o acesso, download e o processamento de imagens provenientes dos principais satélites do mundo para fins de monitoramento ambiental.",
-    practicalFocus: "Operação com sensores orbitais (Landsat, Sentinel, Planet), composições coloridas de bandas (cor verdadeira e falsa cor) e cálculo prático de índices espectrais como NDVI (vegetação) e NDWI (água).",
-    submodules: [
-      "Acesso aos portais de download (USGS, Copernicus, Planet)",
-      "Composição de Bandas Coloridas (Cor Verdadeira, Infravermelho)",
-      "Cálculo prático de Índices Espectrais (NDVI e NDWI)",
-      "Mapeamento temporal de desmatamento e cicatrizes de queimadas"
-    ],
-    slides: [13, 14, 15, 16]
-  },
-  {
-    title: "Módulo 5: Processamento Digital de Imagens e Dados Raster",
+    category: 'qgis',
+    title: "Módulo 4: Processamento Digital de Imagens e Dados Raster",
     objective: "Explorar o potencial dos dados raster e de altimetria para entender o relevo de uma região e produzir análises físicas complexas.",
     practicalFocus: "Processamento de Modelos Digitais de Elevação (MDE), geração automática de curvas de nível (intervalos customizados), cálculo de mapas de declividade (slope), orientação de vertentes (aspect) e relevo sombreado (hillshade).",
     submodules: [
@@ -63,19 +64,8 @@ const modules = [
     slides: [17, 18, 19, 20]
   },
   {
-    title: "Módulo 6: Ferramentas de Análise Espacial Avançada",
-    objective: "Aprender a cruzar diferentes camadas de informação geográfica para responder a perguntas complexas de planejamento e tomada de decisões ecológicas.",
-    practicalFocus: "Execução de operações de geoprocessamento como buffers (áreas de influência), intersecções, uniões, recortes espaciais e análise de proximidade espacial.",
-    submodules: [
-      "Criação de buffers e áreas de influência (raios dinâmicos)",
-      "Operações de Geoprocessamento (Recortar, Interseccionar, Dissolver)",
-      "Análise de calor (Kernel Density) para distribuição de dados",
-      "Interpolação de dados (IDW / Spline) aplicados ao meio físico"
-    ],
-    slides: [21, 22, 23, 24]
-  },
-  {
-    title: "Módulo 7: Cartografia Temática e Layout de Mapas Profissionais",
+    category: 'qgis',
+    title: "Módulo 5: Cartografia Temática e Layout de Mapas",
     objective: "Desenvolver mapas finais prontos para entrega a órgãos ambientais e clientes, contendo todos os elementos normativos exigidos por lei.",
     practicalFocus: "Criação de templates de impressão, inserção dinâmica de grade de coordenadas, escalas gráficas, legendas configuradas, rosas dos ventos, mapas de localização secundários e automação com a ferramenta Atlas.",
     submodules: [
@@ -86,20 +76,67 @@ const modules = [
     ],
     slides: [25, 26, 27, 28]
   },
+
+  // CATEGORY: ARCGIS PRO
   {
-    title: "Módulo 8: Projetos Ambientais Práticos: Delimitações de APP e Uso do Solo",
-    objective: "Conectar o geoprocessamento à legislação ambiental brasileira por meio de estudos de caso reais do mercado de trabalho de consultoria.",
-    practicalFocus: "Mapeamento automático de Áreas de Preservação Permanente (APP) de cursos d'água e topo de morro, delimitação de Reserva Legal e classificação supervisionada para mapas de uso e ocupação do solo.",
+    category: 'arcgis',
+    title: "Módulo 1: Introdução ao ArcGIS Pro",
+    objective: "Apresentar a interface moderna e o fluxo de trabalho baseado em projetos do ArcGIS Pro.",
+    practicalFocus: "Migração do ArcMap clássico para o ArcGIS Pro, ambientação com abas Ribbon, gerenciamento de geodatabases locais e criação de conexões de banco de dados geográficos.",
     submodules: [
-      "Delimitação automática de Áreas de Preservação Permanente (APP)",
-      "Cálculo de Reserva Legal e Áreas Consolidadas",
-      "Geração de mapas de Uso e Ocupação do Solo para licenciamento",
-      "Integração de arquivos de Drones (Ortofotos e Modelos de Superfície)"
+      "Estrutura de Projetos (.aprx) e Pastas Principais",
+      "Criação e Gestão de File Geodatabase (.gdb)",
+      "Importação e conversão de arquivos de outros sistemas GIS",
+      "Simbologia básica e gerenciamento de camadas de feições"
     ],
-    slides: [29, 30, 31, 32]
+    slides: [21, 22]
   },
   {
-    title: "Módulo 9: Cadastro Ambiental Rural (CAR) e Georreferenciamento",
+    category: 'arcgis',
+    title: "Módulo 2: Vetorização e Análise Avançada no ArcGIS Pro",
+    objective: "Dominar ferramentas avançadas de edição vetorial e análise espacial 2D e 3D no ArcGIS Pro.",
+    practicalFocus: "Uso do Geoprocessing Pane, criação de modelos com ModelBuilder para automatização visual de tarefas e ferramentas de análise de proximidade.",
+    submodules: [
+      "Vetorização de precisão com templates de feição",
+      "Modelagem com ModelBuilder para fluxos automatizados",
+      "Análise de Hot Spots (Densidades) e Proximidades Espaciais",
+      "Elaboração de mapas no layout de impressão do ArcGIS Pro"
+    ],
+    slides: [23, 24]
+  },
+
+  // CATEGORY: REMOTE SENSING
+  {
+    category: 'remotesensing',
+    title: "Módulo 1: Sensoriamento Remoto e Imagens de Satélite",
+    objective: "Dominar o acesso, download e o processamento de imagens provenientes dos principais satélites do mundo para fins de monitoramento ambiental.",
+    practicalFocus: "Operação com sensores orbitais (Landsat, Sentinel, Planet), composições coloridas de bandas (cor verdadeira e falsa cor) e cálculo prático de índices espectrais como NDVI (vegetação) e NDWI (água).",
+    submodules: [
+      "Acesso aos portais de download (USGS, Copernicus, Planet)",
+      "Composição de Bandas Coloridas (Cor Verdadeira, Infravermelho)",
+      "Cálculo prático de Índices Espectrais (NDVI e NDWI)",
+      "Mapeamento temporal de desmatamento e cicatrizes de queimadas"
+    ],
+    slides: [13, 14, 15, 16]
+  },
+  {
+    category: 'remotesensing',
+    title: "Módulo 2: Processamento de Imagens de Drones",
+    objective: "Aprender as etapas do processamento de imagens obtidas por drones para fins de mapeamento cadastral e de relevo.",
+    practicalFocus: "Uso de ferramentas como WebODM e Pix4D para gerar ortomosaicos de altíssima resolução e modelos tridimensionais de terreno.",
+    submodules: [
+      "Planejamento de voo e distribuição de pontos de controle",
+      "Geração automatizada de Ortomosaico Georreferenciado",
+      "Criação de Modelos Digitais de Superfície (MDS) e de Terreno (MDT)",
+      "Importação e pós-processamento de altimetria de drones no QGIS"
+    ],
+    slides: [29, 30]
+  },
+
+  // CATEGORY: PROJECTS
+  {
+    category: 'projects',
+    title: "Módulo 1: Cadastro Ambiental Rural (CAR)",
     objective: "Aprender o passo a passo técnico para realizar o Cadastro Ambiental Rural e preparar arquivos para retificação fundiária.",
     practicalFocus: "Preparação de shapefiles dentro das exigências do Sistema SICAR, importação de dados de GPS de navegação e geodésico, e estruturação de dados de agrimensura legal.",
     submodules: [
@@ -111,7 +148,23 @@ const modules = [
     slides: [33, 34, 35]
   },
   {
-    title: "Módulo 10: Automatização de Rotinas no QGIS (Introdução a PyQGIS)",
+    category: 'projects',
+    title: "Módulo 2: Projetos Ambientais Práticos: Delimitação de APP",
+    objective: "Conectar o geoprocessamento à legislação ambiental brasileira por meio de estudos de caso reais do mercado de trabalho de consultoria.",
+    practicalFocus: "Mapeamento automático de Áreas de Preservação Permanente (APP) de cursos d'água e topo de morro, delimitação de Reserva Legal e classificação supervisionada para mapas de uso e ocupação do solo.",
+    submodules: [
+      "Delimitação automática de Áreas de Preservação Permanente (APP)",
+      "Cálculo de Reserva Legal e Áreas Consolidadas",
+      "Geração de mapas de Uso e Ocupação do Solo para licenciamento",
+      "Integração de arquivos de Drones (Ortofotos e Modelos de Superfície)"
+    ],
+    slides: [31, 32]
+  },
+
+  // CATEGORY: PROGRAMMING
+  {
+    category: 'programming',
+    title: "Módulo 1: Automatização no QGIS (PyQGIS)",
     objective: "Elevar o nível profissional aprendendo a automatizar tarefas demoradas e repetitivas para otimizar a velocidade de entrega dos projetos.",
     practicalFocus: "Introdução à linguagem Python rodando dentro do console do QGIS, uso de scripts prontos para processamentos em lote e otimização extrema de fluxos de geoprocessamento.",
     submodules: [
@@ -121,12 +174,35 @@ const modules = [
       "Execução de processos em lote (Batch Processing) no QGIS"
     ],
     slides: [36, 37]
+  },
+  {
+    category: 'programming',
+    title: "Módulo 2: Linguagem R aplicada ao Geoprocessamento",
+    objective: "Introduzir a linguagem R como ferramenta avançada de análise de dados espaciais e estatística ambiental.",
+    practicalFocus: "Manipulação de tabelas, análise estatística de qualidade ambiental, geração de relatórios dinâmicos e plotagem de dados espaciais geo-estatísticos.",
+    submodules: [
+      "Instalação do R e RStudio",
+      "Estrutura de dados espaciais com o pacote `sf` e `raster`",
+      "Visualização avançada de dados espaciais com `ggplot2`",
+      "Geração de relatórios PDF automatizados com R Markdown"
+    ],
+    slides: []
   }
 ];
 
 export default function Curriculum() {
+  const [activeTab, setActiveTab] = useState('qgis');
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [activeSlide, setActiveSlide] = useState<string | null>(null);
+
+  // Filter modules by active category tab
+  const filteredModules = modules.filter(mod => mod.category === activeTab);
+
+  // Reset accordion when switching tabs
+  const handleTabChange = (tabId: string) => {
+    setActiveTab(tabId);
+    setOpenIndex(null);
+  };
 
   return (
     <section id="conteudo" className="py-24 bg-[var(--color-brand-dark)] relative overflow-hidden border-t border-white/5">
@@ -138,18 +214,41 @@ export default function Curriculum() {
 
       <div className="max-w-4xl mx-auto px-6 relative z-10">
         
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <span className="text-xs font-semibold tracking-widest text-[var(--color-brand-primary)] uppercase">CONTEÚDO PROGRAMÁTICO</span>
           <h2 className="text-4xl md:text-5xl font-bold mt-2 font-primary uppercase tracking-wide">
             O que você vai <span className="text-brand-gradient">aprender</span>?
           </h2>
           <p className="text-[var(--color-brand-light)]/70 max-w-2xl mx-auto font-secondary text-sm md:text-base mt-4">
-            10 módulos detalhados, contendo todos os módulos principais e sub-módulos práticos.
+            Escolha o conteúdo principal abaixo para visualizar os módulos e tópicos detalhados.
           </p>
         </div>
 
+        {/* Tab Buttons Navigation */}
+        <div className="flex flex-wrap items-center justify-center gap-2 mb-10 border-b border-white/10 pb-6">
+          {categories.map((cat) => {
+            const Icon = cat.icon;
+            const isActive = activeTab === cat.id;
+            return (
+              <button
+                key={cat.id}
+                onClick={() => handleTabChange(cat.id)}
+                className={`flex items-center gap-2 px-4 py-2.5 rounded-full text-xs md:text-sm font-semibold font-primary uppercase tracking-wider transition-all cursor-pointer ${
+                  isActive 
+                    ? 'bg-brand-gradient text-[var(--color-brand-dark)] shadow-[0_0_15px_rgba(15,166,10,0.3)] scale-105' 
+                    : 'bg-white/5 border border-white/10 text-white/60 hover:text-white hover:bg-white/10'
+                }`}
+              >
+                <Icon className="w-4 h-4" />
+                {cat.label}
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Modules Accordion */}
         <div className="space-y-4">
-          {modules.map((mod, index) => {
+          {filteredModules.map((mod, index) => {
             const isOpen = openIndex === index;
             return (
               <div 
