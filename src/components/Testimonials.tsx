@@ -37,7 +37,8 @@ export default function Testimonials() {
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
 
   return (
-    <section id="depoimentos" className="py-24 bg-gradient-to-b from-[var(--color-brand-dark)] to-[#010905] relative border-t border-white/5 overflow-hidden">
+    <>
+      <section id="depoimentos" className="py-24 bg-gradient-to-b from-[var(--color-brand-dark)] to-[#010905] relative border-t border-white/5 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
         <div className="text-center mb-16">
@@ -86,14 +87,20 @@ export default function Testimonials() {
             </div>
           ))}
         </div>
-      </div>
+      </div>    </section>
 
+    <section className="py-24 bg-white relative overflow-hidden border-t border-slate-200">
+      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
+      
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Video Testimonials Section */}
         <div>
-          <h3 className="text-2xl md:text-3xl font-bold font-primary uppercase text-center mb-12 tracking-wide text-white">
-            Histórias de <span className="text-brand-gradient">Sucesso</span> em Vídeo
+          <h3 className="text-3xl md:text-5xl font-bold font-primary uppercase text-center mb-4 tracking-wide text-slate-900">
+            Histórias de <span className="text-[var(--color-brand-primary)]">Sucesso</span> em Vídeo
           </h3>
+          <p className="text-slate-500 max-w-2xl mx-auto font-secondary text-sm md:text-base text-center mb-16">
+            Assista aos depoimentos dos nossos alunos e veja como o método transformou suas carreiras.
+          </p>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {videoTestimonials.map((video) => (
@@ -103,12 +110,12 @@ export default function Testimonials() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.03 }}
-                className="group cursor-pointer relative bg-white/5 border border-white/10 rounded-2xl overflow-hidden aspect-[4/3] shadow-lg flex flex-col justify-end"
+                className="group cursor-pointer relative bg-slate-950 border border-slate-100 rounded-2xl overflow-hidden aspect-[4/3] shadow-lg flex flex-col justify-end"
                 onClick={() => setSelectedVideo(video.videoId)}
               >
                 {/* Background image preview */}
                 <div 
-                  className="absolute inset-0 bg-cover bg-center opacity-60 group-hover:opacity-80 transition-opacity duration-300"
+                  className="absolute inset-0 bg-cover bg-center opacity-60 group-hover:opacity-85 transition-opacity duration-300"
                   style={{ backgroundImage: `url(${video.thumb})` }}
                 ></div>
                 
@@ -132,7 +139,6 @@ export default function Testimonials() {
             ))}
           </div>
         </div>
-
       </div>
 
       {/* Video Modal Player (Lightbox) */}
@@ -168,5 +174,6 @@ export default function Testimonials() {
         )}
       </AnimatePresence>
     </section>
+   </>
   );
 }
