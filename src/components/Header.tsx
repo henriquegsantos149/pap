@@ -18,9 +18,9 @@ export default function Header() {
             className="cursor-pointer"
           >
             <img 
-              src={`${import.meta.env.BASE_URL}logo-ambientalpro.webp`} 
-              alt="Ambiental Pro Logo" 
-              className="h-8 md:h-12 w-auto object-contain py-0.5 drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]"
+              src={`${import.meta.env.BASE_URL}header-logo.png`} 
+              alt="PAP & QGIS Logo" 
+              className="h-10 md:h-14 w-auto object-contain py-0.5"
             />
           </a>
         </div>

@@ -15,22 +15,8 @@ export default function Hero({ onOpenModal }: HeroProps) {
       <div className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[var(--color-brand-primary)]/15 rounded-full blur-[120px] pointer-events-none"></div>
       <div className="absolute bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2 w-96 h-96 bg-[var(--color-brand-accent)]/10 rounded-full blur-[120px] pointer-events-none"></div>
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pt-32 pb-20 text-center flex flex-col items-center">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pt-36 pb-20 text-center flex flex-col items-center">
         
-        {/* Check-in Banner / Header Image */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="w-full max-w-2xl mb-8 rounded-xl overflow-hidden shadow-2xl border border-white/5"
-        >
-          <img 
-            src={`${import.meta.env.BASE_URL}header-logo.png`} 
-            alt="Checkin CBMIG Cabeçalho" 
-            className="w-full h-auto object-cover"
-          />
-        </motion.div>
-
         {/* Small Tag */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
