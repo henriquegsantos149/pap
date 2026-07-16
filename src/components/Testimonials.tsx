@@ -1,6 +1,6 @@
-import { useState, useCallback } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight, Play, X } from 'lucide-react';
+import { Play, X } from 'lucide-react';
 
 const screenshotTestimonials = [
   { id: 1, src: 'depoimento-3.png' },
@@ -34,32 +34,7 @@ const videoTestimonials = [
 ];
 
 export default function Testimonials() {
-  const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
-
-  const nextSlide = useCallback(() => {
-    setCurrentIndex((prev) => (prev + 1) % screenshotTestimonials.length);
-  }, []);
-
-  const prevSlide = useCallback(() => {
-    setCurrentIndex((prev) => (prev - 1 + screenshotTestimonials.length) % screenshotTestimonials.length);
-  }, []);
-
-  const handleDragEnd = (_: any, info: any) => {
-    if (info.offset.x > 50) {
-      prevSlide();
-    } else if (info.offset.x < -50) {
-      nextSlide();
-    }
-  };
-
-  const getRelativePosition = (itemIndex: number) => {
-    let diff = itemIndex - currentIndex;
-    const len = screenshotTestimonials.length;
-    if (diff > len / 2) diff -= len;
-    if (diff < -len / 2) diff += len;
-    return diff;
-  };
 
   return (
     <section id="depoimentos" className="py-24 bg-gradient-to-b from-[var(--color-brand-dark)] to-[#010905] relative border-t border-white/5 overflow-hidden">
@@ -74,67 +49,48 @@ export default function Testimonials() {
             Resultados reais de quem já aplicou o método TPRO e alavancou seus resultados no geoprocessamento.
           </p>
         </div>
+      </div>
 
-        {/* Screenshot Slider Section */}
-        <div className="relative flex flex-col items-center min-h-[350px] md:min-h-[450px] justify-center mb-24 overflow-visible">
-          {/* Navigation Arrows */}
-          <button 
-            onClick={prevSlide}
-            className="absolute left-0 z-40 p-3 rounded-full bg-white/5 border border-white/10 text-[var(--color-brand-light)] hover:bg-brand-gradient hover:text-[var(--color-brand-dark)] transition-all hidden lg:block cursor-pointer"
-          >
-            <ChevronLeft className="w-6 h-6" />
-          </button>
-          
-          <button 
-            onClick={nextSlide}
-            className="absolute right-0 z-40 p-3 rounded-full bg-white/5 border border-white/10 text-[var(--color-brand-light)] hover:bg-brand-gradient hover:text-[var(--color-brand-dark)] transition-all hidden lg:block cursor-pointer"
-          >
-            <ChevronRight className="w-6 h-6" />
-          </button>
+      {/* Infinite Horizontal Marquee Ticker */}
+      <div className="relative w-full overflow-hidden mb-24 py-6 border-y border-white/5 bg-black/20">
+        {/* Fading side overlays */}
+        <div className="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-[var(--color-brand-dark)] to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-[var(--color-brand-dark)] to-transparent z-10 pointer-events-none"></div>
 
-          <div className="relative w-full h-full flex items-center justify-center py-10 overflow-visible">
-            {screenshotTestimonials.map((testimonial, i) => {
-              const relativePos = getRelativePosition(i);
-              const isActive = relativePos === 0;
-              const isVisible = Math.abs(relativePos) <= 2; // Show neighbors
+        <div className="animate-marquee gap-6 flex">
+          {/* First loop of cards */}
+          {screenshotTestimonials.map((testimonial, i) => (
+            <div 
+              key={`t1-${testimonial.id}`} 
+              className="w-[180px] md:w-[250px] shrink-0 border border-white/10 rounded-2xl overflow-hidden bg-black shadow-lg hover:border-[var(--color-brand-primary)]/40 transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98]"
+            >
+              <img 
+                src={`${import.meta.env.BASE_URL}testimonials/${testimonial.src}`}
+                alt={`Depoimento ${i + 1}`}
+                className="w-full h-auto object-contain pointer-events-none"
+              />
+            </div>
+          ))}
 
-              return (
-                <motion.div
-                  key={testimonial.id}
-                  initial={false}
-                  animate={{
-                    x: relativePos * 290, 
-                    scale: isActive ? 1 : 0.85,
-                    opacity: isVisible ? (isActive ? 1 : 0.4) : 0, 
-                    filter: isActive ? 'blur(0px)' : 'blur(4px)',
-                    zIndex: isActive ? 30 : 20 - Math.abs(relativePos),
-                    pointerEvents: isActive ? 'auto' : 'none',
-                  }}
-                  transition={{
-                    type: "spring",
-                    stiffness: 280,
-                    damping: 26,
-                  }}
-                  drag={isActive ? "x" : false}
-                  dragConstraints={{ left: 0, right: 0 }}
-                  onDragEnd={handleDragEnd}
-                  className="absolute w-[280px] md:w-[350px] cursor-grab active:cursor-grabbing"
-                >
-                  <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.6)] bg-black aspect-[4/5] flex items-center justify-center">
-                    <img 
-                      src={`${import.meta.env.BASE_URL}testimonials/${testimonial.src}`}
-                      alt={`Depoimento ${i + 1}`}
-                      className="w-full h-full object-contain pointer-events-none"
-                    />
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
+          {/* Duplicated loop of cards for seamless infinite effect */}
+          {screenshotTestimonials.map((testimonial, i) => (
+            <div 
+              key={`t2-${testimonial.id}`} 
+              className="w-[180px] md:w-[250px] shrink-0 border border-white/10 rounded-2xl overflow-hidden bg-black shadow-lg hover:border-[var(--color-brand-primary)]/40 transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98]"
+            >
+              <img 
+                src={`${import.meta.env.BASE_URL}testimonials/${testimonial.src}`}
+                alt={`Depoimento ${i + 1}`}
+                className="w-full h-auto object-contain pointer-events-none"
+              />
+            </div>
+          ))}
         </div>
+      </div>
 
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Video Testimonials Section */}
-        <div className="mt-12">
+        <div>
           <h3 className="text-2xl md:text-3xl font-bold font-primary uppercase text-center mb-12 tracking-wide text-white">
             Histórias de <span className="text-brand-gradient">Sucesso</span> em Vídeo
           </h3>
