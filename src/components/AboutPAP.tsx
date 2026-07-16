@@ -23,7 +23,9 @@ function CountUp({ end, duration = 1200, decimals = 0 }: CountUpProps) {
           const step = (timestamp: number) => {
             if (!startTimestamp) startTimestamp = timestamp;
             const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-            const currentCount = progress * end;
+            // Quadratic ease-out curve: t * (2 - t)
+            const easeOutQuad = progress * (2 - progress);
+            const currentCount = easeOutQuad * end;
             setCount(currentCount);
             if (progress < 1) {
               window.requestAnimationFrame(step);
@@ -113,13 +115,13 @@ export default function AboutPAP() {
               <div className="grid grid-cols-2 gap-4 border-t border-white/10 pt-6">
                 <div>
                   <p className="text-3xl font-extrabold text-[var(--color-brand-primary)] font-primary">
-                    +<CountUp end={15000} duration={1200} />
+                    +<CountUp end={15000} duration={2500} />
                   </p>
                   <p className="text-xs text-[var(--color-brand-light)]/50 font-secondary uppercase tracking-wider mt-1">Alunos Treinados</p>
                 </div>
                 <div>
                   <p className="text-3xl font-extrabold text-white font-primary flex items-center gap-1">
-                    <CountUp end={4.9} duration={1200} decimals={1} />
+                    <CountUp end={4.9} duration={2500} decimals={1} />
                     <Star className="w-5 h-5 fill-[var(--color-brand-accent)] text-[var(--color-brand-accent)] shrink-0" />
                   </p>
                   <p className="text-xs text-[var(--color-brand-light)]/50 font-secondary uppercase tracking-wider mt-1">Avaliação Média</p>
