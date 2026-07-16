@@ -156,7 +156,7 @@ export default function AboutPAP() {
             </h2>
 
             <p className="text-base md:text-lg text-[var(--color-brand-light)]/80 leading-relaxed font-secondary mb-10 max-w-2xl">
-              O **Programa Ambiental Pro (PAP)** é uma formação profissional continuada estruturada em pilares práticos e suporte ativo. Aqui, você não apenas assiste a aulas; você aprende a dominar as principais ferramentas do mercado (QGIS, ArcGIS Pro, Drones, R, Python) para produzir mapas perfeitos que geram contratos e aprovações sem burocracia.
+              O <span className="text-[var(--color-brand-primary)] font-bold">Programa Ambiental Pro (PAP)</span> é uma formação profissional continuada estruturada em pilares práticos e suporte ativo. Aqui, você não apenas assiste a aulas; você aprende a dominar as principais ferramentas do mercado (QGIS, ArcGIS Pro, Drones, R, Python) para produzir mapas perfeitos que geram contratos e aprovações sem burocracia.
             </p>
 
             {/* Highlights list */}
