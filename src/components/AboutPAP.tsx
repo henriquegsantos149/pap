@@ -1,5 +1,57 @@
+import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Award, Compass, MessageSquare, Users, Star } from 'lucide-react';
+
+interface CountUpProps {
+  end: number;
+  duration?: number;
+  decimals?: number;
+}
+
+function CountUp({ end, duration = 1200, decimals = 0 }: CountUpProps) {
+  const [count, setCount] = useState(0);
+  const elementRef = useRef<HTMLSpanElement>(null);
+  const hasStarted = useRef(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && !hasStarted.current) {
+          hasStarted.current = true;
+          let startTimestamp: number | null = null;
+          
+          const step = (timestamp: number) => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            const currentCount = progress * end;
+            setCount(currentCount);
+            if (progress < 1) {
+              window.requestAnimationFrame(step);
+            } else {
+              setCount(end);
+            }
+          };
+          
+          window.requestAnimationFrame(step);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (elementRef.current) {
+      observer.observe(elementRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [end, duration]);
+
+  const formatted = count.toLocaleString('pt-BR', {
+    minimumFractionDigits: decimals,
+    maximumFractionDigits: decimals,
+  });
+
+  return <span ref={elementRef}>{formatted}</span>;
+}
 
 export default function AboutPAP() {
   const highlights = [
@@ -57,15 +109,18 @@ export default function AboutPAP() {
                 Mais do que um curso: um acompanhamento passo a passo para você elaborar mapas perfeitos e relatórios técnicos incontestáveis.
               </p>
 
-              {/* Mini Stats Grid */}
+              {/* Mini Stats Grid with CountUp Animation */}
               <div className="grid grid-cols-2 gap-4 border-t border-white/10 pt-6">
                 <div>
-                  <p className="text-3xl font-extrabold text-[var(--color-brand-primary)] font-primary">+15.000</p>
+                  <p className="text-3xl font-extrabold text-[var(--color-brand-primary)] font-primary">
+                    +<CountUp end={15000} duration={1200} />
+                  </p>
                   <p className="text-xs text-[var(--color-brand-light)]/50 font-secondary uppercase tracking-wider mt-1">Alunos Treinados</p>
                 </div>
                 <div>
                   <p className="text-3xl font-extrabold text-white font-primary flex items-center gap-1">
-                    4.9<Star className="w-5 h-5 fill-[var(--color-brand-accent)] text-[var(--color-brand-accent)] shrink-0" />
+                    <CountUp end={4.9} duration={1200} decimals={1} />
+                    <Star className="w-5 h-5 fill-[var(--color-brand-accent)] text-[var(--color-brand-accent)] shrink-0" />
                   </p>
                   <p className="text-xs text-[var(--color-brand-light)]/50 font-secondary uppercase tracking-wider mt-1">Avaliação Média</p>
                 </div>
