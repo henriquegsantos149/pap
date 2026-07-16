@@ -25,7 +25,7 @@ export default function Hero({ onOpenModal }: HeroProps) {
           className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-semibold uppercase tracking-widest text-[var(--color-brand-accent)] mb-8"
         >
           <Sparkles className="w-3.5 h-3.5" />
-          Aceleração & Direcionamento Profissional
+          PROGRAMA AMBIENTAL PRO
         </motion.div>
 
         {/* Main Headline */}
