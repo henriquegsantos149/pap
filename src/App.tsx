@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
+import AboutPAP from './components/AboutPAP';
 import TargetAudience from './components/TargetAudience';
 import Transformation from './components/Transformation';
 import Methodology from './components/Methodology';
@@ -52,6 +53,7 @@ function App() {
       
       {/* Sections */}
       <Hero onOpenModal={openLeadModal} />
+      <AboutPAP />
       <TargetAudience />
       <Transformation onOpenModal={openLeadModal} />
       <Methodology />
