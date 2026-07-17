@@ -16,7 +16,7 @@ export default function MecRecognition() {
             className="lg:col-span-4 flex justify-center"
           >
             <img 
-              src={`${import.meta.env.BASE_URL}reconhecido_mec.png`} 
+              src={`${import.meta.env.BASE_URL}reconhecido_mec.webp`} 
               alt="Certificado reconhecido pelo MEC" 
               className="w-full max-w-[260px] h-auto object-contain drop-shadow-[0_10px_25px_rgba(15,166,10,0.15)]"
             />

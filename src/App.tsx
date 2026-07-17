@@ -90,7 +90,7 @@ function App() {
       />
 
       {/* Footer */}
-      <footer className="bg-black/60 border-t border-white/5 py-10 text-center text-[var(--color-brand-light)]/40 text-xs">
+      <footer className="bg-[#020604] border-t border-black/10 py-10 text-center text-[var(--color-brand-light)]/40 text-xs">
         <p className="font-secondary tracking-widest uppercase mb-2">
           © {new Date().getFullYear()} Ambiental Pro. Todos os direitos reservados.
         </p>

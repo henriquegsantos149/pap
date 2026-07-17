@@ -24,12 +24,12 @@ const targets = [
 
 export default function TargetAudience() {
   return (
-    <section id="para-quem-e" className="py-24 bg-gradient-to-b from-[var(--color-brand-dark)] to-[#020705] relative border-t border-white/5 overflow-hidden">
+    <section id="para-quem-e" className="py-24 bg-white relative border-t border-black/5 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
         <div className="text-center mb-16">
           <span className="text-xs font-semibold tracking-widest text-[var(--color-brand-primary)] uppercase">SERVE PARA VOCÊ?</span>
-          <h2 className="text-4xl md:text-5xl font-bold mt-2 font-primary uppercase tracking-wide">
+          <h2 className="text-4xl md:text-5xl font-bold mt-2 font-primary uppercase tracking-wide text-[var(--color-brand-dark)]">
             Para quem é o <span className="text-brand-gradient">PAP</span>?
           </h2>
         </div>
@@ -44,7 +44,7 @@ export default function TargetAudience() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group relative bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 hover:border-white/20 transition-all duration-300 flex flex-col items-center text-center shadow-lg"
+                className="group relative bg-white border border-gray-100 rounded-2xl p-8 hover:bg-gray-50 hover:border-gray-200 transition-all duration-300 flex flex-col items-center text-center shadow-lg hover:shadow-xl"
               >
                 {/* Glow border background */}
                 <div 
@@ -58,8 +58,8 @@ export default function TargetAudience() {
                 <div 
                   className="w-16 h-16 rounded-full flex items-center justify-center mb-6 transition-transform group-hover:scale-110 duration-300"
                   style={{
-                    background: `rgba(255, 255, 255, 0.05)`,
-                    border: `1px solid rgba(255, 255, 255, 0.1)`,
+                    background: `rgba(0, 0, 0, 0.02)`,
+                    border: `1px solid rgba(0, 0, 0, 0.05)`,
                     color: target.color
                   }}
                 >
@@ -67,12 +67,12 @@ export default function TargetAudience() {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-xl font-bold mb-4 font-primary uppercase text-white tracking-wide">
+                <h3 className="text-xl font-bold mb-4 font-primary uppercase text-[var(--color-brand-dark)] tracking-wide">
                   {target.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-[var(--color-brand-light)]/70 text-sm leading-relaxed font-secondary">
+                <p className="text-gray-600 text-sm leading-relaxed font-secondary">
                   {target.description}
                 </p>
               </motion.div>

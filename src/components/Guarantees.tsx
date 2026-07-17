@@ -21,7 +21,7 @@ export default function Guarantees() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
         {/* Conditional Guarantee Card */}
-        <div className="bg-white/[0.02] border border-white/10 rounded-3xl p-8 md:p-16 mb-16 shadow-2xl relative">
+        <div className="bg-white border border-gray-100 rounded-3xl p-8 md:p-16 mb-16 shadow-[0_10px_40px_rgba(0,0,0,0.05)] relative">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
             {/* Left/Text Side */}
@@ -32,17 +32,17 @@ export default function Guarantees() {
               transition={{ duration: 0.6 }}
               className="lg:col-span-7"
             >
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-semibold text-[var(--color-brand-accent)] uppercase tracking-widest mb-6">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--color-brand-primary)]/10 border border-[var(--color-brand-primary)]/20 text-xs font-semibold text-[var(--color-brand-primary)] uppercase tracking-widest mb-6">
                 <ShieldAlert className="w-3.5 h-3.5" />
                 Risco Zero Absoluto
               </div>
               
-              <h2 className="text-2xl md:text-4xl font-bold font-primary uppercase tracking-wide leading-tight mb-6">
+              <h2 className="text-2xl md:text-4xl font-bold font-primary uppercase tracking-wide leading-tight mb-6 text-[var(--color-brand-dark)]">
                 Garantia Condicional:<br />
                 Tenha resultados ou vou te dar seu dinheiro de volta + R$ 1.000,00!
               </h2>
 
-              <div className="space-y-4 text-sm md:text-base text-[var(--color-brand-light)]/80 font-secondary leading-relaxed mb-6">
+              <div className="space-y-4 text-sm md:text-base text-gray-600 font-secondary leading-relaxed mb-6">
                 <p>
                   O PAP é um investimento garantido. Se você seguir a metodologia completa, assistir as aulas, montar o portfólio, prospectar e não der certo, devolvemos 100% do seu investimento.
                 </p>
@@ -60,7 +60,7 @@ export default function Guarantees() {
               transition={{ duration: 0.6 }}
               className="lg:col-span-5 flex flex-col items-center"
             >
-              <div className="relative group w-full max-w-[280px] aspect-[1/1.4] rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black cursor-zoom-in" onClick={() => setLightboxOpen(true)}>
+              <div className="relative group w-full max-w-[280px] aspect-[1/1.4] rounded-2xl overflow-hidden border border-gray-200 shadow-xl bg-gray-50 cursor-zoom-in" onClick={() => setLightboxOpen(true)}>
                 <img 
                   src={`${import.meta.env.BASE_URL}${contracts[contractIndex]}`} 
                   alt="Termos do Contrato de Garantia" 
@@ -70,13 +70,13 @@ export default function Guarantees() {
                 {/* Arrow Overlays */}
                 <button 
                   onClick={(e) => { e.stopPropagation(); prevContract(); }}
-                  className="absolute left-2 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/60 border border-white/10 text-white hover:bg-black/80 transition-all z-10 cursor-pointer"
+                  className="absolute left-2 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/80 border border-gray-200 text-gray-800 hover:bg-white transition-all z-10 cursor-pointer shadow-md"
                 >
                   <ChevronLeft className="w-4 h-4" />
                 </button>
                 <button 
                   onClick={(e) => { e.stopPropagation(); nextContract(); }}
-                  className="absolute right-2 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/60 border border-white/10 text-white hover:bg-black/80 transition-all z-10 cursor-pointer"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/80 border border-gray-200 text-gray-800 hover:bg-white transition-all z-10 cursor-pointer shadow-md"
                 >
                   <ChevronRight className="w-4 h-4" />
                 </button>
@@ -86,7 +86,7 @@ export default function Guarantees() {
                   <Maximize2 className="w-5 h-5 text-white" />
                 </div>
               </div>
-              <span className="text-xs text-[var(--color-brand-light)]/40 font-secondary mt-3">
+              <span className="text-xs text-gray-400 font-secondary mt-3">
                 Contrato Página {contractIndex + 1} de {contracts.length}
               </span>
             </motion.div>
@@ -95,7 +95,7 @@ export default function Guarantees() {
         </div>
 
         {/* Unconditional Guarantee Card */}
-        <div className="bg-gradient-to-br from-white/[0.03] to-transparent border border-white/10 rounded-3xl p-8 md:p-16 shadow-2xl">
+        <div className="bg-white border border-gray-100 rounded-3xl p-8 md:p-16 shadow-[0_10px_40px_rgba(0,0,0,0.05)]">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
             {/* Left Side: 15-day Badge */}
@@ -107,7 +107,7 @@ export default function Guarantees() {
               className="lg:col-span-4 flex justify-center order-2 lg:order-1"
             >
               <img 
-                src={`${import.meta.env.BASE_URL}15-dias.png`} 
+                src={`${import.meta.env.BASE_URL}15-dias.webp`} 
                 alt="Selo de 15 dias de garantia incondicional" 
                 className="w-48 md:w-64 h-auto object-contain drop-shadow-[0_10px_20px_rgba(15,166,10,0.25)] animate-pulse"
               />
@@ -121,24 +121,18 @@ export default function Guarantees() {
               transition={{ duration: 0.6 }}
               className="lg:col-span-8 order-1 lg:order-2"
             >
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-semibold text-[var(--color-brand-primary)] uppercase tracking-widest mb-6">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--color-brand-primary)]/10 border border-[var(--color-brand-primary)]/20 text-xs font-semibold text-[var(--color-brand-primary)] uppercase tracking-widest mb-6">
                 <Award className="w-3.5 h-3.5" />
                 Garantia Incondicional
               </div>
               
-              <h2 className="text-2xl md:text-4xl font-bold font-primary uppercase tracking-wide leading-tight mb-6">
+              <h2 className="text-2xl md:text-4xl font-bold font-primary uppercase tracking-wide leading-tight mb-6 text-[var(--color-brand-dark)]">
                 Experimente por 15 dias sem compromisso
               </h2>
 
-              <div className="space-y-4 text-sm md:text-base text-[var(--color-brand-light)]/80 font-secondary leading-relaxed">
+              <div className="space-y-4 text-sm md:text-base text-gray-600 font-secondary leading-relaxed">
                 <p>
-                  Você tem 2 semanas inteiras para testar o Programa Ambiental Pro. Se depois de 15 dias você entender que o PAP não vai te ajudar a conseguir melhores oportunidades na área ambiental, não tem problema.
-                </p>
-                <p>
-                  Basta você solicitar o reembolso e faremos na hora, sem questionamentos. É só nos enviar um e-mail ou uma mensagem no WhatsApp que devolvemos 100% do seu dinheiro.
-                </p>
-                <p>
-                  <strong>Isso são 7 dias a mais do que o garantido em lei!</strong> Fazemos isso porque confiamos plenamente em nossa metodologia e no potencial de cada aluno.
+                  Teste o PAP por 15 dias inteiros (<strong>7 dias a mais do que a lei exige</strong>). Se achar que a metodologia não é para você, basta enviar um e-mail ou WhatsApp e devolvemos 100% do seu dinheiro na hora, sem nenhum questionamento. Confiamos plenamente nos resultados dos nossos alunos!
                 </p>
               </div>
             </motion.div>

@@ -84,7 +84,7 @@ export default function Pricing({ onOpenModal }: PricingProps) {
               {/* Product Mockup Image */}
               <div className="mb-8 flex justify-center">
                 <img 
-                  src={`${import.meta.env.BASE_URL}pap-mockup.png`} 
+                  src={`${import.meta.env.BASE_URL}pap-mockup.webp?v=2`} 
                   alt="Programa Ambiental Pro Mockup" 
                   className="h-44 w-auto object-contain drop-shadow-[0_20px_30px_rgba(0,0,0,0.6)]"
                 />

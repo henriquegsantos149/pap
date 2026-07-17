@@ -131,7 +131,7 @@ export default function ExitIntentModal({ isOpen, onClose }: ExitIntentModalProp
               </p>
               
               <img 
-                src={`${import.meta.env.BASE_URL}qgis-lead.png`} 
+                src={`${import.meta.env.BASE_URL}qgis-lead.webp`} 
                 alt="Pacotão QGIS de Acesso Gratuito" 
                 className="w-48 h-auto object-contain drop-shadow-[0_15px_30px_rgba(15,166,10,0.2)]"
               />

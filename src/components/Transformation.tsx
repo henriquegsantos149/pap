@@ -9,9 +9,9 @@ export default function Transformation({ onOpenModal }: TransformationProps) {
     <section id="sobre" className="py-24 bg-[var(--color-brand-dark)] relative border-t border-white/5 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          
+
           {/* Left Column: Image with modern offset border style */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -20,16 +20,16 @@ export default function Transformation({ onOpenModal }: TransformationProps) {
           >
             <div className="absolute inset-0 border-2 border-[var(--color-brand-primary)] rounded-3xl translate-x-4 translate-y-4 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-300 pointer-events-none"></div>
             <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-black border border-white/10 aspect-[4/5]">
-              <img 
-                src={`${import.meta.env.BASE_URL}henrique-story.png`} 
-                alt="Henrique Gonzalez Story" 
+              <img
+                src={`${import.meta.env.BASE_URL}henrique-story.webp`}
+                alt="Henrique Gonzalez Story"
                 className="w-full h-full object-cover transition-transform group-hover:scale-105 duration-500"
               />
             </div>
           </motion.div>
 
           {/* Right Column: Copywriting content */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -57,7 +57,7 @@ export default function Transformation({ onOpenModal }: TransformationProps) {
             </div>
 
             {/* CTA Button */}
-            <button 
+            <button
               onClick={onOpenModal}
               className="mt-10 shape-leaf group relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-brand-gradient text-[var(--color-brand-dark)] font-bold text-base overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-[0_0_20px_var(--color-brand-primary)]/20 hover:shadow-[0_0_30px_var(--color-brand-primary)]/40 cursor-pointer"
             >

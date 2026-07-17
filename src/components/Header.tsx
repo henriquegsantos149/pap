@@ -45,7 +45,7 @@ export default function Header() {
         {/* Right Side: PAP & QGIS Logos */}
         <div className="hidden md:flex justify-end flex-1">
           <img 
-            src={`${import.meta.env.BASE_URL}header-logo.png`} 
+            src={`${import.meta.env.BASE_URL}header-logo.webp`} 
             alt="PAP & QGIS Logos" 
             className="h-10 md:h-12 w-auto object-contain py-0.5"
           />

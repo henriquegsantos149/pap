@@ -28,7 +28,7 @@ const pillars = [
     name: 'Orientação',
     description: 'Direcionamento com suporte especializado para que você nunca se sinta travado em nenhuma fase da sua curva de aprendizado.',
     icon: Users,
-    color: '#585859'
+    color: '#0FA60A'
   }
 ];
 
@@ -36,7 +36,7 @@ export default function Methodology() {
   return (
     <section id="metodo" className="py-24 bg-gradient-to-b from-[#020705] to-[var(--color-brand-dark)] relative border-t border-white/5 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        
+
         <div className="text-center mb-16">
           <span className="text-xs font-semibold tracking-widest text-[var(--color-brand-secondary)] uppercase">METODOLOGIA ÚNICA</span>
           <h2 className="text-4xl md:text-5xl font-bold mt-2 font-primary uppercase tracking-wide">
@@ -47,20 +47,37 @@ export default function Methodology() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={{
+            hidden: {},
+            visible: {
+              transition: {
+                staggerChildren: 0.15
+              }
+            }
+          }}
+          className="grid grid-cols-1 md:grid-cols-4 gap-8"
+        >
           {pillars.map((pillar, index) => {
             const Icon = pillar.icon;
             return (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                variants={{
+                  hidden: { opacity: 0, x: "100vw" },
+                  visible: {
+                    opacity: 1,
+                    x: 0,
+                    transition: { type: "spring", bounce: 0.2, duration: 0.8 }
+                  }
+                }}
                 className="group relative bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 hover:border-white/20 transition-all duration-300 flex flex-col items-start shadow-lg"
               >
                 {/* Large letter watermark */}
-                <div 
+                <div
                   className="absolute top-4 right-6 text-7xl font-extrabold opacity-5 group-hover:opacity-10 transition-opacity duration-300 font-impact selection:bg-transparent"
                   style={{ color: pillar.color }}
                 >
@@ -68,7 +85,7 @@ export default function Methodology() {
                 </div>
 
                 {/* Icon */}
-                <div 
+                <div
                   className="w-12 h-12 rounded-xl flex items-center justify-center mb-6 transition-transform group-hover:scale-110 duration-300"
                   style={{
                     background: `rgba(255, 255, 255, 0.03)`,
@@ -91,7 +108,7 @@ export default function Methodology() {
               </motion.div>
             );
           })}
-        </div>
+        </motion.div>
 
       </div>
     </section>

@@ -27,33 +27,16 @@ export default function StickyCTA({ onOpenModal }: StickyCTAProps) {
   return (
     <AnimatePresence>
       {isVisible && (
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 50 }}
+        <motion.button
+          onClick={onOpenModal}
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.8 }}
           transition={{ duration: 0.3 }}
-          className="fixed bottom-0 left-0 w-full z-40 bg-[var(--color-brand-dark)]/90 backdrop-blur-md border-t border-white/10 py-4 px-6 md:py-3 shadow-[0_-10px_30px_rgba(0,0,0,0.5)]"
+          className="fixed bottom-6 right-6 z-40 shape-leaf px-6 py-4 bg-brand-gradient text-[var(--color-brand-dark)] font-bold text-sm tracking-wide uppercase transition-all hover:scale-105 active:scale-95 shadow-[0_0_15px_var(--color-brand-primary)]/40 hover:shadow-[0_0_25px_var(--color-brand-primary)]/60 cursor-pointer font-primary"
         >
-          <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-            {/* Title / Info */}
-            <div className="text-center sm:text-left">
-              <p className="text-xs font-semibold text-[var(--color-brand-accent)] uppercase tracking-wider font-secondary">
-                Oferta Especial Ativa
-              </p>
-              <h4 className="text-sm md:text-base font-bold text-white font-primary uppercase tracking-wide">
-                Formação Completa em Geoprocessamento por 12x de R$ 99,70
-              </h4>
-            </div>
-
-            {/* CTA Button */}
-            <button
-              onClick={onOpenModal}
-              className="w-full sm:w-auto shape-leaf px-6 py-2.5 bg-brand-gradient text-[var(--color-brand-dark)] font-bold text-sm tracking-wide uppercase transition-all hover:scale-105 active:scale-95 shadow-[0_0_15px_var(--color-brand-primary)]/30 hover:shadow-[0_0_20px_var(--color-brand-primary)]/50 cursor-pointer font-primary"
-            >
-              Garantir Minha Vaga
-            </button>
-          </div>
-        </motion.div>
+          Garantir Minha Vaga
+        </motion.button>
       )}
     </AnimatePresence>
   );

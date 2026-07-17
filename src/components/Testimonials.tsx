@@ -3,23 +3,23 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Play, X } from 'lucide-react';
 
 const screenshotTestimonials = [
-  { id: 1, src: 'depoimento-3.png' },
-  { id: 2, src: 'depoimento-4.png' },
-  { id: 3, src: 'depoimento-5.png' },
-  { id: 4, src: 'depoimento-8.png' },
-  { id: 5, src: 'depoimento-1.1.png' },
-  { id: 6, src: 'depoimento-1.2.png' },
-  { id: 7, src: 'depoimento-2.png' },
-  { id: 8, src: 'd1-2023.png' },
-  { id: 9, src: 'd3-2023.png' },
-  { id: 10, src: 'd4-2023.png' },
-  { id: 11, src: 'd5-2023.png' },
-  { id: 12, src: 'd7-2023.png' },
-  { id: 13, src: 'd8-2023.png' },
-  { id: 14, src: 'd9-2023.png' },
-  { id: 15, src: 'd10-2023.png' },
-  { id: 16, src: 'd11-2023.png' },
-  { id: 17, src: 'd13-2023.png' }
+  { id: 1, src: 'depoimento-3.webp' },
+  { id: 2, src: 'depoimento-4.webp' },
+  { id: 3, src: 'depoimento-5.webp' },
+  { id: 4, src: 'depoimento-8.webp' },
+  { id: 5, src: 'depoimento-1.1.webp' },
+  { id: 6, src: 'depoimento-1.2.webp' },
+  { id: 7, src: 'depoimento-2.webp' },
+  { id: 8, src: 'd1-2023.webp' },
+  { id: 9, src: 'd3-2023.webp' },
+  { id: 10, src: 'd4-2023.webp' },
+  { id: 11, src: 'd5-2023.webp' },
+  { id: 12, src: 'd7-2023.webp' },
+  { id: 13, src: 'd8-2023.webp' },
+  { id: 14, src: 'd9-2023.webp' },
+  { id: 15, src: 'd10-2023.webp' },
+  { id: 16, src: 'd11-2023.webp' },
+  { id: 17, src: 'd13-2023.webp' }
 ];
 
 const videoTestimonials = [

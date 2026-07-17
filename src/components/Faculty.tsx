@@ -56,7 +56,7 @@ export default function Faculty({ onOpenModal }: FacultyProps) {
             <div className="absolute inset-0 border-2 border-[var(--color-brand-accent)] rounded-3xl translate-x-[-16px] translate-y-4 group-hover:translate-x-[-8px] group-hover:translate-y-2 transition-transform duration-300 pointer-events-none"></div>
             <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-black border border-white/10 aspect-[4/5]">
               <img 
-                src={`${import.meta.env.BASE_URL}henrique-profile.png`} 
+                src={`${import.meta.env.BASE_URL}henrique-profile.webp`} 
                 alt="Henrique Gonzalez Professor" 
                 className="w-full h-full object-cover transition-transform group-hover:scale-105 duration-500"
               />

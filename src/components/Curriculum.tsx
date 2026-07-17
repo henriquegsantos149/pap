@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ChevronDown, CheckCircle, Layers, Globe, Award, Database } from 'lucide-react';
+import { ChevronDown, CheckCircle, Layers, Globe, Award, Database, Sparkles } from 'lucide-react';
 
 const categories = [
   { id: 'qgis', label: 'QGIS', icon: Globe },
@@ -811,14 +811,10 @@ export default function Curriculum() {
                 </button>
                 
                 <div 
-                  style={{ 
-                    maxHeight: isOpen ? '99999px' : '0', 
-                    overflow: 'hidden', 
-                    transition: 'max-height 0.6s ease-in-out, opacity 0.35s ease-in-out',
-                    opacity: isOpen ? 1 : 0 
-                  }}
+                  className={`grid transition-all duration-300 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
                 >
-                  <div className="px-6 pb-6 md:px-8 md:pb-8 pt-0 md:pl-26 space-y-5 border-t border-white/5">
+                  <div className="overflow-hidden">
+                    <div className="px-6 pb-6 md:px-8 md:pb-8 pt-0 md:pl-26 space-y-5 border-t border-white/5">
                     
                     {/* Objetivo */}
                     <div className="flex items-start gap-4 mt-6">
@@ -849,9 +845,24 @@ export default function Curriculum() {
                           </div>
                         ))}
                       </div>
+
+                      {/* AI Bonus for QGIS modules */}
+                      {mod.category === 'qgis' && (
+                        <div className="mt-6 flex items-center bg-[var(--color-brand-primary)]/10 border border-[var(--color-brand-primary)]/20 rounded-xl p-3 md:p-4 gap-3 md:gap-4 transition-colors hover:bg-[var(--color-brand-primary)]/15">
+                          <div className="w-8 h-8 rounded-lg bg-[var(--color-brand-primary)]/20 flex items-center justify-center text-[var(--color-brand-primary)] shrink-0">
+                            <Sparkles className="w-4 h-4" />
+                          </div>
+                          <div>
+                            <span className="text-[10px] md:text-xs font-bold text-[var(--color-brand-primary)] uppercase tracking-wider block mb-0.5">Aula Bônus de IA</span>
+                            <span className="text-xs md:text-sm font-semibold text-[var(--color-brand-light)]/90">Como resolver os problemas deste módulo utilizando a Inteligência Artificial Claude</span>
+                          </div>
+                        </div>
+                      )}
+
                     </div>
 
 
+                  </div>
                   </div>
                 </div>
               </div>
