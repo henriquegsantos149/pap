@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Sparkles, Zap, Bot } from 'lucide-react';
+import { X, Sparkles } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
 interface NoveltyModalProps {
