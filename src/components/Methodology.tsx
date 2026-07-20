@@ -67,11 +67,11 @@ export default function Methodology() {
               <motion.div
                 key={index}
                 variants={{
-                  hidden: { opacity: 0, x: "100vw" },
+                  hidden: { opacity: 0, y: 40 },
                   visible: {
                     opacity: 1,
-                    x: 0,
-                    transition: { type: "spring", bounce: 0.2, duration: 0.8 }
+                    y: 0,
+                    transition: { type: "spring", bounce: 0.2, duration: 0.5 }
                   }
                 }}
                 className="group relative bg-white border border-gray-100 rounded-2xl p-8 hover:border-[var(--color-brand-primary)]/30 transition-all duration-300 flex flex-col items-start shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(15,166,10,0.08)] overflow-hidden"
