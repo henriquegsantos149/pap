@@ -100,7 +100,7 @@ export default function AboutPAP() {
               <div className="absolute -top-10 -left-10 w-28 h-28 bg-[var(--color-brand-primary)]/15 rounded-full blur-2xl"></div>
               
               <span className="text-[10px] font-bold uppercase tracking-widest text-[var(--color-brand-accent)] bg-[var(--color-brand-accent)]/10 px-3 py-1 rounded-full border border-[var(--color-brand-accent)]/20 mb-6 inline-block">
-                ECOSSISTEMA PAP
+                ECOSSISTEMA PAP 5.0
               </span>
               
               <h3 className="text-2xl font-bold font-primary text-white uppercase tracking-wide leading-tight mb-4">
@@ -108,7 +108,7 @@ export default function AboutPAP() {
               </h3>
               
               <p className="text-sm text-[var(--color-brand-light)]/70 font-secondary leading-relaxed mb-6">
-                Mais do que um curso: um acompanhamento passo a passo para você elaborar mapas perfeitos e relatórios técnicos incontestáveis.
+                Mais do que um curso: um ecossistema com Inteligência Artificial para você elaborar mapas perfeitos, currículos blindados e relatórios técnicos incontestáveis.
               </p>
 
               {/* Mini Stats Grid with CountUp Animation */}
@@ -152,11 +152,11 @@ export default function AboutPAP() {
             
             <h2 className="text-4xl md:text-5xl font-bold font-primary uppercase tracking-tight text-white mb-6 leading-tight">
               O maior ecossistema de <br />
-              <span className="text-brand-gradient">Geoprocessamento</span> do país
+              <span className="text-brand-gradient">Geoprocessamento e IA</span> do país
             </h2>
 
             <p className="text-base md:text-lg text-[var(--color-brand-light)]/80 leading-relaxed font-secondary mb-10 max-w-2xl">
-              O <span className="text-[var(--color-brand-primary)] font-bold">Programa Ambiental Pro (PAP)</span> te ensina, na prática e do zero, a dominar as principais ferramentas de geoprocessamento: <span className="text-white font-bold">QGIS</span>, <span className="text-white font-bold">ArcGIS Pro</span>, <span className="text-white font-bold">Drones</span>, <span className="text-white font-bold">R</span> e <span className="text-white font-bold">Python</span>. O objetivo é um só: te capacitar para produzir mapas e relatórios profissionais que aprovam licenciamentos ambientais sem burocracia e destravam contratos de alto valor. Tudo isso com suporte diário de especialistas para resolver as dúvidas dos seus projetos reais.
+              O <span className="text-[var(--color-brand-primary)] font-bold">Programa Ambiental Pro (PAP 5.0)</span> evoluiu. Agora, além de te ensinar, na prática e do zero, a dominar as principais ferramentas como <span className="text-white font-bold">QGIS</span>, <span className="text-white font-bold">ArcGIS Pro</span>, <span className="text-white font-bold">Drones</span>, <span className="text-white font-bold">R</span> e <span className="text-white font-bold">Python</span>, você também conta com <strong>Agentes de Inteligência Artificial</strong> para tirar dúvidas 24h, analisar seus mapas e otimizar seu currículo. O objetivo é um só: te capacitar de forma inteligente para produzir mapas e relatórios que aprovam licenciamentos ambientais sem burocracia e destravam contratos de alto valor.
             </p>
 
             {/* Highlights list */}

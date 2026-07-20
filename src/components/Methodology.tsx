@@ -34,15 +34,15 @@ const pillars = [
 
 export default function Methodology() {
   return (
-    <section id="metodo" className="py-24 bg-gradient-to-b from-[#020705] to-[var(--color-brand-dark)] relative border-t border-white/5 overflow-hidden">
+    <section id="metodo" className="py-24 bg-[#fdfdfd] relative border-t border-[var(--color-brand-primary)]/10 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
 
         <div className="text-center mb-16">
           <span className="text-xs font-semibold tracking-widest text-[var(--color-brand-secondary)] uppercase">METODOLOGIA ÚNICA</span>
-          <h2 className="text-4xl md:text-5xl font-bold mt-2 font-primary uppercase tracking-wide">
+          <h2 className="text-4xl md:text-5xl font-bold mt-2 font-primary uppercase tracking-wide text-[var(--color-brand-dark)]">
             O Método <span className="text-brand-gradient">TPRO</span>
           </h2>
-          <p className="text-[var(--color-brand-light)]/70 max-w-2xl mx-auto font-secondary text-sm md:text-base mt-4">
+          <p className="text-gray-600 max-w-2xl mx-auto font-secondary text-sm md:text-base mt-4">
             Uma abordagem acelerada que foca exatamente no que o mercado ambiental exige de você.
           </p>
         </div>
@@ -74,11 +74,11 @@ export default function Methodology() {
                     transition: { type: "spring", bounce: 0.2, duration: 0.8 }
                   }
                 }}
-                className="group relative bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 hover:border-white/20 transition-all duration-300 flex flex-col items-start shadow-lg"
+                className="group relative bg-white border border-gray-100 rounded-2xl p-8 hover:border-[var(--color-brand-primary)]/30 transition-all duration-300 flex flex-col items-start shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(15,166,10,0.08)] overflow-hidden"
               >
                 {/* Large letter watermark */}
                 <div
-                  className="absolute top-4 right-6 text-7xl font-extrabold opacity-5 group-hover:opacity-10 transition-opacity duration-300 font-impact selection:bg-transparent"
+                  className="absolute top-4 right-6 text-7xl font-extrabold opacity-15 group-hover:opacity-30 transition-opacity duration-300 font-impact selection:bg-transparent"
                   style={{ color: pillar.color }}
                 >
                   {pillar.letter}
@@ -88,8 +88,8 @@ export default function Methodology() {
                 <div
                   className="w-12 h-12 rounded-xl flex items-center justify-center mb-6 transition-transform group-hover:scale-110 duration-300"
                   style={{
-                    background: `rgba(255, 255, 255, 0.03)`,
-                    border: `1px solid rgba(255, 255, 255, 0.08)`,
+                    background: `rgba(15, 166, 10, 0.05)`,
+                    border: `1px solid rgba(15, 166, 10, 0.1)`,
                     color: pillar.color
                   }}
                 >
@@ -97,12 +97,12 @@ export default function Methodology() {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-xl font-bold mb-3 font-primary uppercase text-white tracking-wide">
+                <h3 className="text-xl font-bold mb-3 font-primary uppercase text-[var(--color-brand-dark)] tracking-wide">
                   {pillar.name}
                 </h3>
 
                 {/* Description */}
-                <p className="text-[var(--color-brand-light)]/70 text-sm leading-relaxed font-secondary">
+                <p className="text-gray-600 text-sm leading-relaxed font-secondary">
                   {pillar.description}
                 </p>
               </motion.div>

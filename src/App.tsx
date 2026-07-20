@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
+import Pap5Benefits from './components/Pap5Benefits';
 import AboutPAP from './components/AboutPAP';
 import TargetAudience from './components/TargetAudience';
 import Transformation from './components/Transformation';
@@ -16,12 +17,26 @@ import FAQ from './components/FAQ';
 import StickyCTA from './components/StickyCTA';
 import LeadModal from './components/LeadModal';
 import ExitIntentModal from './components/ExitIntentModal';
+import NoveltyModal from './components/NoveltyModal';
 
 const checkoutRedirectUrl = 'https://pay.voompcreators.com.br/428/offer/uBszrb/?cupom=ESPECIAL500';
 
 function App() {
   const [isLeadOpen, setIsLeadOpen] = useState(false);
   const [isExitOpen, setIsExitOpen] = useState(false);
+  const [isNoveltyOpen, setIsNoveltyOpen] = useState(false);
+
+  // Show novelty modal on first load
+  useEffect(() => {
+    const hasSeenNovelty = sessionStorage.getItem('seenNoveltyPopup');
+    if (!hasSeenNovelty) {
+      const timer = setTimeout(() => {
+        setIsNoveltyOpen(true);
+        sessionStorage.setItem('seenNoveltyPopup', 'true');
+      }, 1500);
+      return () => clearTimeout(timer);
+    }
+  }, []);
 
   // Bind exit intent to open the QGIS package lead collection
   useEffect(() => {
@@ -44,6 +59,7 @@ function App() {
   const openLeadModal = () => setIsLeadOpen(true);
   const closeLeadModal = () => setIsLeadOpen(false);
   const closeExitModal = () => setIsExitOpen(false);
+  const closeNoveltyModal = () => setIsNoveltyOpen(false);
 
   return (
     <main className="w-full min-h-screen bg-[var(--color-brand-dark)] text-[var(--color-brand-light)] font-secondary selection:bg-[var(--color-brand-primary)] selection:text-[var(--color-brand-dark)]">
@@ -53,6 +69,7 @@ function App() {
       
       {/* Sections */}
       <Hero onOpenModal={openLeadModal} />
+      <Pap5Benefits />
       <AboutPAP />
       <TargetAudience />
       <Transformation onOpenModal={openLeadModal} />
@@ -87,6 +104,11 @@ function App() {
       <ExitIntentModal 
         isOpen={isExitOpen} 
         onClose={closeExitModal} 
+      />
+      
+      <NoveltyModal 
+        isOpen={isNoveltyOpen} 
+        onClose={closeNoveltyModal} 
       />
 
       {/* Footer */}
