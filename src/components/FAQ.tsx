@@ -25,7 +25,7 @@ const faqs = [
   },
   {
     question: 'Quais as formas de pagamento disponíveis?',
-    answer: 'Você pode pagar via Cartão de Crédito (em até 12x de R$ 99,70), PIX à vista com 15% de desconto (R$ 997,00) ou boleto bancário.'
+    answer: 'Você pode pagar via Cartão de Crédito (em até 12x de R$ 149,70), PIX à vista com 15% de desconto (R$ 1.497,00) ou boleto bancário.'
   }
 ];
 

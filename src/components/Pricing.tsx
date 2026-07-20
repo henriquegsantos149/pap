@@ -92,17 +92,17 @@ export default function Pricing({ onOpenModal }: PricingProps) {
 
               {/* Strikethrough from price */}
               <p className="text-[var(--color-brand-light)]/60 text-sm font-secondary">
-                de <span className="line-through font-bold text-red-500">R$ 1.497,00</span> por apenas
+                de <span className="line-through font-bold text-red-500">R$ 1.997,00</span> por apenas
               </p>
 
               {/* Promo Price */}
               <div className="my-6">
                 <span className="text-sm font-semibold text-[var(--color-brand-accent)] uppercase tracking-wider block font-secondary">12x de</span>
                 <h3 className="text-5xl md:text-6xl font-black font-primary text-white tracking-tight mt-1">
-                  R$ 99,70
+                  R$ 149,70
                 </h3>
                 <span className="text-xs text-[var(--color-brand-light)]/50 font-secondary mt-2 block">
-                  ou R$ 997,00 à vista (15% de desconto)
+                  ou R$ 1.497,00 à vista (15% de desconto)
                 </span>
               </div>
             </div>
