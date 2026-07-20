@@ -97,7 +97,7 @@ export default function Pricing({ onOpenModal }: PricingProps) {
 
               {/* Promo Price */}
               <div className="my-6">
-                <span className="text-sm font-semibold text-[var(--color-brand-accent)] uppercase tracking-wider block font-secondary">12x de</span>
+                <span className="text-sm font-semibold text-[var(--color-brand-accent)] uppercase tracking-wider block font-secondary">Assinatura Anual em até 12x de</span>
                 <h3 className="text-5xl md:text-6xl font-black font-primary text-white tracking-tight mt-1">
                   R$ 149,70
                 </h3>
