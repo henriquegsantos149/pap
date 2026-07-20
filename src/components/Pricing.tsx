@@ -92,7 +92,7 @@ export default function Pricing({ onOpenModal }: PricingProps) {
 
               {/* Strikethrough from price */}
               <p className="text-[var(--color-brand-light)]/60 text-sm font-secondary">
-                de <span className="line-through font-bold text-red-500">R$ 1.997,00</span> por apenas
+                por apenas
               </p>
 
               {/* Promo Price */}

@@ -19,7 +19,7 @@ import LeadModal from './components/LeadModal';
 import ExitIntentModal from './components/ExitIntentModal';
 import NoveltyModal from './components/NoveltyModal';
 
-const checkoutRedirectUrl = 'https://pay.voompcreators.com.br/428/offer/uBszrb/?cupom=ESPECIAL500';
+const checkoutRedirectUrl = 'https://pay.voompcreators.com.br/428';
 
 function App() {
   const [isLeadOpen, setIsLeadOpen] = useState(false);
