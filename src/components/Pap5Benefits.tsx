@@ -63,7 +63,7 @@ export default function Pap5Benefits() {
             viewport={{ once: true }}
             className="text-3xl md:text-5xl font-bold font-primary uppercase tracking-tight text-[var(--color-brand-dark)] mb-6"
           >
-            O Geoprocessamento <br className="hidden md:block"/> 
+            O&nbsp;Geoprocessamento <br className="hidden md:block"/> 
             <span className="text-[var(--color-brand-primary)]">Encontrou a Inteligência Artificial</span>
           </motion.h2>
           <motion.p 
