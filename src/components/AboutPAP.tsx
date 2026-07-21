@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { Award, Compass, MessageSquare, Users, Star, StarHalf } from 'lucide-react';
+import { Award, Compass, MessageSquare, Users, Star } from 'lucide-react';
 
 interface CountUpProps {
   end: number;
