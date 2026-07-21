@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { Award, Compass, MessageSquare, Users, Star } from 'lucide-react';
+import { Award, Compass, MessageSquare, Users, Star, StarHalf } from 'lucide-react';
 
 interface CountUpProps {
   end: number;
@@ -120,9 +120,19 @@ export default function AboutPAP() {
                   <p className="text-xs text-[var(--color-brand-light)]/50 font-secondary uppercase tracking-wider mt-1">Alunos Treinados</p>
                 </div>
                 <div>
-                  <p className="text-3xl font-extrabold text-white font-primary flex items-center gap-1">
+                  <p className="text-3xl font-extrabold text-white font-primary flex items-center gap-2">
                     <CountUp end={4.9} duration={2500} decimals={1} />
-                    <Star className="w-5 h-5 fill-[var(--color-brand-accent)] text-[var(--color-brand-accent)] shrink-0" />
+                    <span className="flex items-center gap-0.5 -mt-1">
+                      {[1, 2, 3, 4].map((i) => (
+                        <Star key={i} className="w-4 h-4 fill-[var(--color-brand-accent)] text-[var(--color-brand-secondary)] shrink-0" strokeWidth={1} />
+                      ))}
+                      <div className="relative w-4 h-4 shrink-0">
+                        <Star className="absolute top-0 left-0 w-4 h-4 fill-white/10 text-[var(--color-brand-secondary)]" strokeWidth={1} />
+                        <div className="absolute top-0 left-0 h-4 overflow-hidden" style={{ width: '70%' }}>
+                          <Star className="w-4 h-4 fill-[var(--color-brand-accent)] text-[var(--color-brand-secondary)]" strokeWidth={1} />
+                        </div>
+                      </div>
+                    </span>
                   </p>
                   <p className="text-xs text-[var(--color-brand-light)]/50 font-secondary uppercase tracking-wider mt-1">Avaliação Média</p>
                 </div>

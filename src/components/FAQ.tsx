@@ -107,7 +107,7 @@ export default function FAQ() {
           </p>
 
           <a 
-            href="https://tinyurl.com/contato-ambientalpro"
+            href="https://api.whatsapp.com/send?phone=5521988374133&text=Ol%C3%A1!%20Tenho%20interesse%20no%20PAP%205.0."
             target="_blank"
             rel="noopener noreferrer"
             className="shape-leaf group relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#25D366] text-black font-bold text-base overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(37,211,102,0.3)] hover:shadow-[0_0_30px_rgba(37,211,102,0.5)] cursor-pointer"
