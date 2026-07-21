@@ -43,7 +43,7 @@ export default function FAQ() {
         {/* Title */}
         <div className="text-center mb-16">
           <span className="text-xs font-semibold tracking-widest text-[var(--color-brand-primary)] uppercase">DÚVIDAS FREQUENTES</span>
-          <h2 className="text-4xl md:text-5xl font-bold mt-2 font-primary uppercase tracking-wide text-[var(--color-brand-dark)]">
+          <h2 className="text-3xl md:text-5xl font-bold mt-2 font-primary uppercase tracking-wide text-[var(--color-brand-dark)]">
             Perguntas <span className="text-brand-gradient">Frequentes</span>
           </h2>
         </div>

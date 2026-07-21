@@ -26,7 +26,7 @@ export default function Pricing({ onOpenModal }: PricingProps) {
         {/* Header */}
         <div className="text-center mb-16">
           <span className="text-xs font-semibold tracking-widest text-[var(--color-brand-accent)] uppercase">INVESTIMENTO</span>
-          <h2 className="text-4xl md:text-5xl font-bold mt-2 font-primary uppercase tracking-wide">
+          <h2 className="text-3xl md:text-5xl font-bold mt-2 font-primary uppercase tracking-wide">
             Quanto você irá <span className="text-brand-gradient">investir</span>?
           </h2>
         </div>
@@ -98,7 +98,7 @@ export default function Pricing({ onOpenModal }: PricingProps) {
               {/* Promo Price */}
               <div className="my-6">
                 <span className="text-sm font-semibold text-[var(--color-brand-accent)] uppercase tracking-wider block font-secondary">Assinatura Anual em até 12x de</span>
-                <h3 className="text-5xl md:text-6xl font-black font-primary text-white tracking-tight mt-1">
+                <h3 className="text-4xl md:text-6xl font-black font-primary text-white tracking-tight mt-1">
                   R$ 149,70
                 </h3>
                 <span className="text-xs text-[var(--color-brand-light)]/50 font-secondary mt-2 block">

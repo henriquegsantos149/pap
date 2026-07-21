@@ -756,7 +756,7 @@ export default function Curriculum() {
         
         <div className="text-center mb-12">
           <span className="text-xs font-semibold tracking-widest text-[var(--color-brand-primary)] uppercase">CONTEÚDO PROGRAMÁTICO</span>
-          <h2 className="text-4xl md:text-5xl font-bold mt-2 font-primary uppercase tracking-wide">
+          <h2 className="text-3xl md:text-5xl font-bold mt-2 font-primary uppercase tracking-wide">
             O que você vai <span className="text-brand-gradient">aprender</span>?
           </h2>
           <p className="text-[var(--color-brand-light)]/70 max-w-2xl mx-auto font-secondary text-sm md:text-base mt-4">

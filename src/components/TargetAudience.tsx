@@ -29,7 +29,7 @@ export default function TargetAudience() {
         
         <div className="text-center mb-16">
           <span className="text-xs font-semibold tracking-widest text-[var(--color-brand-primary)] uppercase">SERVE PARA VOCÊ?</span>
-          <h2 className="text-4xl md:text-5xl font-bold mt-2 font-primary uppercase tracking-wide text-[var(--color-brand-dark)]">
+          <h2 className="text-3xl md:text-5xl font-bold mt-2 font-primary uppercase tracking-wide text-[var(--color-brand-dark)]">
             Para quem é o <span className="text-brand-gradient">PAP</span>?
           </h2>
         </div>

@@ -39,7 +39,7 @@ export default function Methodology() {
 
         <div className="text-center mb-16">
           <span className="text-xs font-semibold tracking-widest text-[var(--color-brand-secondary)] uppercase">METODOLOGIA ÚNICA</span>
-          <h2 className="text-4xl md:text-5xl font-bold mt-2 font-primary uppercase tracking-wide text-[var(--color-brand-dark)]">
+          <h2 className="text-3xl md:text-5xl font-bold mt-2 font-primary uppercase tracking-wide text-[var(--color-brand-dark)]">
             O Método <span className="text-brand-gradient">TPRO</span>
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto font-secondary text-sm md:text-base mt-4">

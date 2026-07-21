@@ -150,7 +150,7 @@ export default function AboutPAP() {
           >
             <span className="text-xs font-semibold tracking-widest text-[var(--color-brand-primary)] uppercase mb-3">O QUE É O PROGRAMA</span>
             
-            <h2 className="text-4xl md:text-5xl font-bold font-primary uppercase tracking-tight text-white mb-6 leading-tight">
+            <h2 className="text-3xl md:text-5xl font-bold font-primary uppercase tracking-tight text-white mb-6 leading-tight">
               O maior ecossistema de <br />
               <span className="text-brand-gradient">Geoprocessamento e IA</span> do país
             </h2>
