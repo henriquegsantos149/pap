@@ -62,7 +62,7 @@ function App() {
   const closeNoveltyModal = () => setIsNoveltyOpen(false);
 
   return (
-    <main className="w-full min-h-screen bg-[var(--color-brand-dark)] text-[var(--color-brand-light)] font-secondary selection:bg-[var(--color-brand-primary)] selection:text-[var(--color-brand-dark)]">
+    <main className="w-full overflow-x-hidden min-h-screen bg-[var(--color-brand-dark)] text-[var(--color-brand-light)] font-secondary selection:bg-[var(--color-brand-primary)] selection:text-[var(--color-brand-dark)]">
       
       {/* Navigation Header */}
       <Header />
@@ -71,12 +71,12 @@ function App() {
       <Hero onOpenModal={openLeadModal} />
       <Pap5Benefits />
       <AboutPAP />
+      <Curriculum />
       <TargetAudience />
       <Transformation onOpenModal={openLeadModal} />
       <Methodology />
-      <Curriculum />
-      <MecRecognition />
       <Bonuses />
+      <MecRecognition />
       <Testimonials />
       
       {/* Pricing and Offer block */}

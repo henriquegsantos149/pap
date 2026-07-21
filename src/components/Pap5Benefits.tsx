@@ -41,7 +41,7 @@ export default function Pap5Benefits() {
   };
 
   return (
-    <section className="relative py-24 bg-[#f2f7f3] overflow-hidden border-t border-[var(--color-brand-primary)]/20">
+    <section className="relative py-24 bg-[#f2f7f3] overflow-hidden ">
       {/* Background elements */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl h-[400px] bg-[var(--color-brand-primary)]/10 rounded-full blur-[100px] pointer-events-none" />
       

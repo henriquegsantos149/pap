@@ -745,7 +745,7 @@ export default function Curriculum() {
   };
 
   return (
-    <section id="conteudo" className="py-24 bg-[var(--color-brand-dark)] relative overflow-hidden border-t border-white/5">
+    <section id="conteudo" className="py-24 bg-[var(--color-brand-dark)] relative overflow-hidden ">
       {/* background grid */}
       <div className="absolute inset-0 bg-grid opacity-[0.05]"></div>
       
@@ -814,7 +814,7 @@ export default function Curriculum() {
                   className={`grid transition-all duration-300 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
                 >
                   <div className="overflow-hidden">
-                    <div className="px-6 pb-6 md:px-8 md:pb-8 pt-0 md:pl-26 space-y-5 border-t border-white/5">
+                    <div className="px-6 pb-6 md:px-8 md:pb-8 pt-0 md:pl-26 space-y-5 ">
                     
                     {/* Objetivo */}
                     <div className="flex items-start gap-4 mt-6">
@@ -835,7 +835,7 @@ export default function Curriculum() {
                     </div>
 
                     {/* Submódulos (Aulas/Tópicos) */}
-                    <div className="mt-4 pt-4 border-t border-white/5">
+                    <div className="mt-4 pt-4 ">
                       <strong className="text-white uppercase text-xs tracking-widest block mb-3 font-primary">Tópicos e Aulas Práticas:</strong>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         {mod.submodules.map((sub, sIdx) => (

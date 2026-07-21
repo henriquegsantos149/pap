@@ -26,7 +26,6 @@ const videoTestimonials = [
   { id: 'v1', name: 'Vitor Rodolfo', videoId: 'C_SwspeJrNw', thumb: 'https://img.youtube.com/vi/C_SwspeJrNw/hqdefault.jpg' },
   { id: 'v2', name: 'Pilar', videoId: 'msRyNXuon0c', thumb: 'https://img.youtube.com/vi/msRyNXuon0c/hqdefault.jpg' },
   { id: 'v3', name: 'Fernando', videoId: 'XderFHgnuOI', thumb: 'https://img.youtube.com/vi/XderFHgnuOI/hqdefault.jpg' },
-  { id: 'v4', name: 'Pedro', videoId: 'BKROv8Skk3Q', thumb: 'https://img.youtube.com/vi/BKROv8Skk3Q/hqdefault.jpg' },
   { id: 'v5', name: 'Alysson Santos', videoId: 'A2FHfcHgBwc', thumb: 'https://img.youtube.com/vi/A2FHfcHgBwc/hqdefault.jpg' },
   { id: 'v6', name: 'Amanda', videoId: 'iSolKln-eZI', thumb: 'https://img.youtube.com/vi/iSolKln-eZI/hqdefault.jpg' },
   { id: 'v7', name: 'Rebecca', videoId: 'ZIfexKIDjIw', thumb: 'https://img.youtube.com/vi/ZIfexKIDjIw/hqdefault.jpg' },
@@ -38,7 +37,7 @@ export default function Testimonials() {
 
   return (
     <>
-      <section id="depoimentos" className="py-24 bg-gradient-to-b from-[var(--color-brand-dark)] to-[#010905] relative border-t border-white/5 overflow-hidden">
+      <section id="depoimentos" className="py-24 bg-gradient-to-b from-[var(--color-brand-dark)] to-[#010905] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
         <div className="text-center mb-16">
@@ -89,7 +88,7 @@ export default function Testimonials() {
         </div>
       </div>    </section>
 
-    <section className="py-24 bg-white relative overflow-hidden border-t border-slate-200">
+    <section className="py-24 bg-white relative overflow-hidden ">
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
       
       <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -102,7 +101,7 @@ export default function Testimonials() {
             Assista aos depoimentos dos nossos alunos e veja como o método transformou suas carreiras.
           </p>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="flex flex-wrap justify-center gap-6">
             {videoTestimonials.map((video) => (
               <motion.div
                 key={video.id}
@@ -110,7 +109,7 @@ export default function Testimonials() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.03 }}
-                className="group cursor-pointer relative bg-slate-950 border border-slate-100 rounded-2xl overflow-hidden aspect-[4/3] shadow-lg flex flex-col justify-end"
+                className="w-[calc(50%-12px)] md:w-[calc(25%-18px)] shrink-0 group cursor-pointer relative bg-slate-950 border border-slate-100 rounded-2xl overflow-hidden aspect-[4/3] shadow-lg flex flex-col justify-end"
                 onClick={() => setSelectedVideo(video.videoId)}
               >
                 {/* Background image preview */}

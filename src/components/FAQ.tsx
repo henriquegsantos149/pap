@@ -37,7 +37,7 @@ export default function FAQ() {
   };
 
   return (
-    <section id="perguntas-frequentes" className="py-24 bg-white relative border-t border-gray-100 overflow-hidden">
+    <section id="perguntas-frequentes" className="py-24 bg-white relative overflow-hidden">
       <div className="max-w-4xl mx-auto px-6 relative z-10">
         
         {/* Title */}

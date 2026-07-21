@@ -6,7 +6,7 @@ interface TransformationProps {
 
 export default function Transformation({ onOpenModal }: TransformationProps) {
   return (
-    <section id="sobre" className="py-24 bg-[var(--color-brand-dark)] relative border-t border-white/5 overflow-hidden">
+    <section id="sobre" className="py-24 bg-[var(--color-brand-dark)] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 

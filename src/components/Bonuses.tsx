@@ -16,7 +16,7 @@ const mainBonuses = [
 
 export default function Bonuses() {
   return (
-    <section id="bonus" className="py-24 bg-[var(--color-brand-dark)] relative border-t border-white/5 overflow-hidden">
+    <section id="bonus" className="py-24 bg-[var(--color-brand-dark)] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
         {/* Header */}
@@ -112,7 +112,7 @@ export default function Bonuses() {
               </h3>
               
               <p className="text-sm md:text-base text-[var(--color-brand-light)]/70 font-secondary leading-relaxed mb-6">
-                Como aluno do PAP, você tem direito à carteirinha de estudante digital sem custo adicional. Ela garante meia entrada em shows, cinemas e eventos culturais em todo o país.
+                Como aluno do PAP, você tem direito à carteirinha de estudante digital. Ela garante meia entrada em shows, cinemas e eventos culturais em todo o país.
               </p>
               
               <p className="text-sm text-[var(--color-brand-light)]/50 font-secondary leading-relaxed">
@@ -125,8 +125,7 @@ export default function Bonuses() {
                 <Ticket className="w-5 h-5" />
               </div>
               <div className="text-left flex-1">
-                <span className="text-xs font-bold text-[var(--color-brand-primary)] uppercase tracking-wider block">Bônus Adicional</span>
-                <span className="text-sm font-semibold text-white">Meia Entrada Garantida</span>
+                <span className="text-sm font-semibold text-white block">Meia Entrada Garantida</span>
               </div>
               <ChevronRight className="w-5 h-5 text-[var(--color-brand-light)]/30" />
             </div>

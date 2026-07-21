@@ -17,7 +17,7 @@ export default function Guarantees() {
   };
 
   return (
-    <section id="garantia" className="py-24 bg-gradient-to-b from-[#010905] to-[var(--color-brand-dark)] relative border-t border-white/5 overflow-hidden">
+    <section id="garantia" className="py-24 bg-gradient-to-b from-[#010905] to-[var(--color-brand-dark)] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
         {/* Conditional Guarantee Card */}

@@ -34,7 +34,7 @@ const pillars = [
 
 export default function Methodology() {
   return (
-    <section id="metodo" className="py-24 bg-[#fdfdfd] relative border-t border-[var(--color-brand-primary)]/10 overflow-hidden">
+    <section id="metodo" className="py-24 bg-[#fdfdfd] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
 
         <div className="text-center mb-16">

@@ -19,6 +19,9 @@
     color: var(--color-brand-light);
     font-family: var(--font-secondary);
     overflow-x: hidden;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
   }
   
   h1, h2, h3, h4, h5, h6 {

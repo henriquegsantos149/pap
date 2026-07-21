@@ -80,7 +80,7 @@ export default function AboutPAP() {
   ];
 
   return (
-    <section className="py-24 bg-gradient-to-b from-[#020905] to-[var(--color-brand-dark)] relative overflow-hidden border-t border-white/5">
+    <section className="py-24 bg-gradient-to-b from-[#020905] to-[var(--color-brand-dark)] relative overflow-hidden ">
       {/* Glow elements */}
       <div className="absolute top-1/2 right-0 -translate-y-1/2 w-80 h-80 bg-[var(--color-brand-primary)]/10 rounded-full blur-[100px] pointer-events-none"></div>
 
@@ -112,7 +112,7 @@ export default function AboutPAP() {
               </p>
 
               {/* Mini Stats Grid with CountUp Animation */}
-              <div className="grid grid-cols-2 gap-4 border-t border-white/10 pt-6">
+              <div className="grid grid-cols-2 gap-4 pt-6">
                 <div>
                   <p className="text-3xl font-extrabold text-[var(--color-brand-primary)] font-primary">
                     +<CountUp end={15000} duration={2500} />

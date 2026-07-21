@@ -24,7 +24,7 @@ const targets = [
 
 export default function TargetAudience() {
   return (
-    <section id="para-quem-e" className="py-24 bg-white relative border-t border-black/5 overflow-hidden">
+    <section id="para-quem-e" className="py-24 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
         <div className="text-center mb-16">

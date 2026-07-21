@@ -20,7 +20,7 @@ const valueItems = [
 
 export default function Pricing({ onOpenModal }: PricingProps) {
   return (
-    <section id="preco" className="py-24 bg-[var(--color-brand-dark)] relative border-t border-white/5 overflow-hidden">
+    <section id="preco" className="py-24 bg-[var(--color-brand-dark)] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
         {/* Header */}
@@ -61,7 +61,7 @@ export default function Pricing({ onOpenModal }: PricingProps) {
               </ul>
             </div>
             
-            <div className="mt-8 pt-4 border-t border-white/10 flex justify-between items-center">
+            <div className="mt-8 pt-4 flex justify-between items-center">
               <span className="text-base text-[var(--color-brand-light)]/60 font-secondary">Valor Total Real:</span>
               <span className="text-lg font-bold text-white line-through font-secondary">R$ 7.926,00</span>
             </div>
