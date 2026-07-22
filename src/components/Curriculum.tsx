@@ -6,6 +6,7 @@ const categories = [
   { id: 'arcgis', label: 'ArcGIS Pro', icon: Layers },
   { id: 'arcmap', label: 'ArcMap (Desktop)', icon: Layers },
   { id: 'specialists', label: 'Cursos de Especialistas', icon: Award },
+  { id: 'ia', label: 'Minicurso de IA', icon: Sparkles },
   { id: 'lives', label: 'Gravação das Lives (+107 Aulas)', icon: Database },
 ];
 
@@ -198,6 +199,18 @@ const modules = [
       "12.3 Classificação Supervisionada (SCP Plugin)",
       "12.4 Segmentação e Classificação baseada em Objeto (OBIA)",
       "12.5 Dissolvendo e Calculando Área das Classes de Uso do Solo"
+    ],
+    slides: [6]
+  },
+  {
+    category: 'qgis',
+    title: "Módulo PAP.IA | Exercícios com Inteligência Artificial",
+    objective: "Integrar inteligência artificial ao seu fluxo de trabalho.",
+    practicalFocus: "Resolução de exercícios práticos utilizando IA no QGIS.",
+    submodules: [
+      "Módulo 1: PAP.IA | Exercício com IA (Antigravity)",
+      "Módulo 2: PAP.IA | Exercício com IA (Claude Code)",
+      "Módulo 3: PAP.IA | Exercício com IA (Claude + QGIS MCP)"
     ],
     slides: [6]
   },
@@ -699,6 +712,42 @@ const modules = [
       "07 | Gestão e resolução de Erros em softwares de Geoprocessamento"
     ],
     slides: [33]
+  },
+
+  // CATEGORY: MINICURSO DE IA
+  {
+    category: 'ia',
+    title: "Introdução à Inteligência Artificial: seu Portfólio Web na Prática",
+    objective: "Aprender os conceitos fundamentais de IA e aplicá-los na construção de um portfólio web.",
+    practicalFocus: "Utilização de ferramentas de IA para desenvolvimento web e automação de tarefas.",
+    submodules: [
+      "Introdução e Principais Ferramentas",
+      "Quem será seu professor?",
+      "Por que aprender sobre IA?",
+      "O que é Inteligência Artificial?",
+      "Explorando possibilidades com o ChatGPT",
+      "Agendando Tarefas com o Gemini",
+      "Criando um Artefato com Claude",
+      "Aprenda qualquer assunto com o Notebook LM"
+    ],
+    slides: [36]
+  },
+  {
+    category: 'ia',
+    title: "Módulo Prático: Criando um Portfólio Web com o Antigravity",
+    objective: "Desenvolver e publicar um site completo de forma automatizada com IA.",
+    practicalFocus: "Do prompt inicial à publicação de um portfólio web gratuito com suporte do Antigravity.",
+    submodules: [
+      "Referências e Descrição de Ideias",
+      "5 Passos para Desenvolver com IA",
+      "Download, Instalação e Diferença de Versões",
+      "Prompt Inicial e Início das Tarefas",
+      "Primeira versão",
+      "Ajustes e melhorias",
+      "Publicando o site gratuitamente",
+      "Finalizando o projeto com Fable 5"
+    ],
+    slides: [36]
   },
 
   // CATEGORY: LIVES (Slides 16-19)
