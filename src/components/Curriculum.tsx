@@ -779,7 +779,7 @@ const modules = [
   }
 ];
 
-export default function Curriculum() {
+export default function Curriculum() { console.log("Reloading...");
   const [activeTab, setActiveTab] = useState('qgis');
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
@@ -896,7 +896,7 @@ export default function Curriculum() {
                       </div>
 
                       {/* AI Bonus for QGIS modules */}
-                      {mod.category === 'qgis' && (
+                      {mod.category === 'qgis' && index < 3 && (
                         <div className="mt-6 flex items-center bg-[var(--color-brand-primary)]/10 border border-[var(--color-brand-primary)]/20 rounded-xl p-3 md:p-4 gap-3 md:gap-4 transition-colors hover:bg-[var(--color-brand-primary)]/15">
                           <div className="w-8 h-8 rounded-lg bg-[var(--color-brand-primary)]/20 flex items-center justify-center text-[var(--color-brand-primary)] shrink-0">
                             <Sparkles className="w-4 h-4" />
