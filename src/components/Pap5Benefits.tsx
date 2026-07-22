@@ -17,7 +17,7 @@ export default function Pap5Benefits() {
     },
     {
       title: "Aulas com Claude",
-      description: "No final de cada módulo do QGIS, aulas especiais resolvendo desafios do tema com auxílio da IA Claude."
+      description: "No final de alguns módulos do QGIS, aulas especiais resolvendo desafios do tema com auxílio da IA Claude."
     },
     {
       title: "Módulo IA na Prática",
