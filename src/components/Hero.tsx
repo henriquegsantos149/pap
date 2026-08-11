@@ -24,7 +24,6 @@ export default function Hero({ onOpenModal }: HeroProps) {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-[var(--color-brand-primary)]/30 text-xs font-semibold uppercase tracking-widest text-[var(--color-brand-primary)] mb-8 shadow-[0_0_15px_var(--color-brand-primary)]/20"
         >
-          <Sparkles className="w-3.5 h-3.5" />
           PROGRAMA AMBIENTAL PRO 5.0
         </motion.div>
 

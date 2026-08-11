@@ -48,15 +48,7 @@ export default function Pap5Benefits() {
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         
         <div className="text-center mb-16">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[var(--color-brand-primary)]/10 text-[var(--color-brand-primary)] font-semibold uppercase tracking-widest text-xs mb-6 border border-[var(--color-brand-primary)]/20"
-          >
-            <Sparkles className="w-3.5 h-3.5" />
-            Nova Fase
-          </motion.div>
+
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

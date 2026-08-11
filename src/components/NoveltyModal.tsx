@@ -49,9 +49,7 @@ export default function NoveltyModal({ isOpen, onClose }: NoveltyModalProps) {
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-32 bg-[var(--color-brand-primary)]/20 blur-[60px] pointer-events-none" />
 
             <div className="relative z-10 flex flex-col items-center text-center">
-              <div className="w-16 h-16 bg-brand-gradient flex items-center justify-center rounded-full mb-6 shadow-[0_0_30px_var(--color-brand-primary)]/40">
-                <Sparkles className="w-8 h-8 text-[#010a04]" />
-              </div>
+
 
               <h2 className="text-3xl font-bold font-primary uppercase tracking-tight text-white mb-2">
                 O PAP Evoluiu. <br/>
