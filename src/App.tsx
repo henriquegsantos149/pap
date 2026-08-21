@@ -113,6 +113,9 @@ function App() {
 
       {/* Footer */}
       <footer className="bg-[#020604] border-t border-black/10 py-10 text-center text-[var(--color-brand-light)]/40 text-xs">
+        <div className="flex justify-center mb-6">
+          <img src="/logo-ambientalpro.webp" alt="Ambiental Pro" className="h-10 w-auto opacity-50 hover:opacity-100 transition-opacity" />
+        </div>
         <p className="font-secondary tracking-widest uppercase mb-2">
           © {new Date().getFullYear()} Ambiental Pro. Todos os direitos reservados.
         </p>
