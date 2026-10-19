@@ -1,3 +1,4 @@
+import BlackFridayNotice from './components/BlackFridayNotice';
 import { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -17,31 +18,16 @@ import FAQ from './components/FAQ';
 import StickyCTA from './components/StickyCTA';
 import LeadModal from './components/LeadModal';
 import ExitIntentModal from './components/ExitIntentModal';
-import NoveltyModal from './components/NoveltyModal';
 
 const checkoutRedirectUrl = 'https://pay.voompcreators.com.br/428';
 
 function App() {
   const [isLeadOpen, setIsLeadOpen] = useState(false);
   const [isExitOpen, setIsExitOpen] = useState(false);
-  const [isNoveltyOpen, setIsNoveltyOpen] = useState(false);
-
-  // Show novelty modal on first load
-  useEffect(() => {
-    const hasSeenNovelty = sessionStorage.getItem('seenNoveltyPopup');
-    if (!hasSeenNovelty) {
-      const timer = setTimeout(() => {
-        setIsNoveltyOpen(true);
-        sessionStorage.setItem('seenNoveltyPopup', 'true');
-      }, 1500);
-      return () => clearTimeout(timer);
-    }
-  }, []);
-
   // Bind exit intent to open the QGIS package lead collection
   useEffect(() => {
     const handleMouseLeave = (e: MouseEvent) => {
-      if (e.clientY < 40) {
+      if (e.clientY < 40 && !document.querySelector('dialog[open]')) {
         const hasSeen = sessionStorage.getItem('seenExitPopup');
         if (!hasSeen) {
           sessionStorage.setItem('seenExitPopup', 'true');
@@ -59,10 +45,10 @@ function App() {
   const openLeadModal = () => setIsLeadOpen(true);
   const closeLeadModal = () => setIsLeadOpen(false);
   const closeExitModal = () => setIsExitOpen(false);
-  const closeNoveltyModal = () => setIsNoveltyOpen(false);
 
   return (
     <main className="w-full overflow-x-hidden min-h-screen bg-[var(--color-brand-dark)] text-[var(--color-brand-light)] font-secondary selection:bg-[var(--color-brand-primary)] selection:text-[var(--color-brand-dark)]">
+      <BlackFridayNotice />
       
       {/* Navigation Header */}
       <Header />
@@ -106,10 +92,6 @@ function App() {
         onClose={closeExitModal} 
       />
       
-      <NoveltyModal 
-        isOpen={isNoveltyOpen} 
-        onClose={closeNoveltyModal} 
-      />
 
       {/* Footer */}
       <footer className="bg-[#020604] border-t border-black/10 py-10 text-center text-[var(--color-brand-light)]/40 text-xs">

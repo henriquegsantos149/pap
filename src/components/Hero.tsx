@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ChevronDown, Sparkles } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 
 interface HeroProps {
   onOpenModal: () => void;
