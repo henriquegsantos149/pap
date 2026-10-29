@@ -21,7 +21,7 @@
 }
 
 .black-friday-page main > section:first-of-type {
-  background: radial-gradient(ellipse at 90% 65%, #ed006809, transparent 55%), #08090b;
+  background: #08090b;
 }
 
 .black-friday-page .bg-grid {
@@ -34,7 +34,7 @@
 }
 
 .black-friday-page main > section:first-of-type h1 > span {
-  box-shadow: 0 8px 55px #ed00681a;
+  box-shadow: none;
 }
 
 /* Mantém contraste nas seções claras do PAP. */
@@ -51,7 +51,7 @@
 
 .black-friday-page #precos,
 .black-friday-page #garantia {
-  background: radial-gradient(ellipse at 90% 10%, #ed006810, transparent 55%), #08090b;
+  background: #08090b;
 }
 
 .black-friday-page [class*="from-[#020d04]"] {

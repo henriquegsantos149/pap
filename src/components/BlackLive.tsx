@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import type { FormEvent } from 'react';
-import { ArrowRight, CalendarDays, Clock3, Monitor, Infinity as InfinityIcon, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, CalendarDays, Clock3, Infinity as InfinityIcon, CheckCircle2 } from 'lucide-react';
 
 const liveDate = Date.parse('2026-11-24T20:00:00-03:00');
 const registrationEndpoint = '/api/pap-black-subscribe';
@@ -74,7 +74,6 @@ export function BlackLiveHero() {
         <h1>Black Friday PAP<br /><span className="text-brand-gradient">Acesso VITALÍCIO</span></h1>
         <p className="black-live-description">Sua evolução no Geoprocessamento não precisa ter prazo para acabar. Participe da live e conheça a condição de Black Friday para ter acesso vitalício ao Programa Ambiental Pro.</p>
         <div className="black-live-date"><span><CalendarDays size={20} />24 de novembro de 2026</span><span><Clock3 size={20} />20h · Horário de Brasília</span></div>
-        <div className="black-live-highlights"><span><Monitor size={18} />Ao vivo e online</span><span><InfinityIcon size={20} />PAP vitalício</span></div>
       </div>
       <div id="inscricao" className="black-live-form-card">
         <h2>Inscreva-se grátis</h2>
