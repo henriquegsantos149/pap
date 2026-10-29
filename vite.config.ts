@@ -6,4 +6,12 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   base: '/pap/',
+  build: {
+    rollupOptions: {
+      input: {
+        main: 'index.html',
+        black: 'black.html',
+      },
+    },
+  },
 })

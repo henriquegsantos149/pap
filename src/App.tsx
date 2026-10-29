@@ -18,14 +18,17 @@ import FAQ from './components/FAQ';
 import StickyCTA from './components/StickyCTA';
 import LeadModal from './components/LeadModal';
 import ExitIntentModal from './components/ExitIntentModal';
+import { BlackLiveHero, BlackLiveAbout } from './components/BlackLive';
 
 const checkoutRedirectUrl = 'https://pay.voompcreators.com.br/428';
 
 function App() {
+  const isBlackPage = document.documentElement.classList.contains('black-friday-page');
   const [isLeadOpen, setIsLeadOpen] = useState(false);
   const [isExitOpen, setIsExitOpen] = useState(false);
   // Bind exit intent to open the QGIS package lead collection
   useEffect(() => {
+    if (isBlackPage) return;
     const handleMouseLeave = (e: MouseEvent) => {
       if (e.clientY < 40 && !document.querySelector('dialog[open]')) {
         const hasSeen = sessionStorage.getItem('seenExitPopup');
@@ -40,21 +43,27 @@ function App() {
     return () => {
       document.removeEventListener('mouseleave', handleMouseLeave);
     };
-  }, []);
+  }, [isBlackPage]);
 
-  const openLeadModal = () => setIsLeadOpen(true);
+  const openLeadModal = () => {
+    if (isBlackPage) {
+      document.getElementById('inscricao')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return;
+    }
+    setIsLeadOpen(true);
+  };
   const closeLeadModal = () => setIsLeadOpen(false);
   const closeExitModal = () => setIsExitOpen(false);
 
   return (
     <main className="w-full overflow-x-hidden min-h-screen bg-[var(--color-brand-dark)] text-[var(--color-brand-light)] font-secondary selection:bg-[var(--color-brand-primary)] selection:text-[var(--color-brand-dark)]">
-      <BlackFridayNotice />
+      {!document.documentElement.classList.contains('black-friday-page') && <BlackFridayNotice />}
       
       {/* Navigation Header */}
       <Header />
       
       {/* Sections */}
-      <Hero onOpenModal={openLeadModal} />
+      {isBlackPage ? <><BlackLiveHero /><BlackLiveAbout /></> : <Hero onOpenModal={openLeadModal} />}
       <Pap5Benefits />
       <AboutPAP />
       <Curriculum />
@@ -66,7 +75,7 @@ function App() {
       <Testimonials />
       
       {/* Pricing and Offer block */}
-      <Pricing onOpenModal={openLeadModal} />
+      {!isBlackPage && <Pricing onOpenModal={openLeadModal} />}
       
       {/* Legal & Conditional Guarantees */}
       <Guarantees />
