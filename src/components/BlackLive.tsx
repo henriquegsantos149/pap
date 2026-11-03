@@ -5,6 +5,14 @@ import { ArrowRight, CalendarDays, Clock3, Infinity as InfinityIcon, CheckCircle
 const liveDate = Date.parse('2026-11-24T20:00:00-03:00');
 const registrationEndpoint = '/api/pap-black-subscribe';
 const utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+function formatPhone(value: string) {
+  const digits = value.replace(/\D/g, '').slice(0, 11);
+  if (!digits) return '';
+  if (digits.length <= 2) return `(${digits}`;
+  const local = digits.slice(2);
+  const split = local.length > 8 ? 5 : 4;
+  return `(${digits.slice(0, 2)}) ${local.slice(0, split)}${local.length > split ? `-${local.slice(split)}` : ''}`;
+}
 function campaignAttribution() {
   const params = new URLSearchParams(window.location.search);
   let saved: Record<string, string> = {};
@@ -34,13 +42,14 @@ function Countdown() {
 export function BlackLiveHero() {
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
   const [graduated, setGraduated] = useState('');
+  const [telephone, setTelephone] = useState('');
   useEffect(() => { campaignAttribution(); }, []);
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const form = event.currentTarget;
     const values = Object.fromEntries(new FormData(form));
     const phone = String(values.telefone).replace(/\D/g, '');
-    if (phone.length < 10 || phone.length > 13) {
+    if (phone.length < 10 || phone.length > 11) {
       const input = form.elements.namedItem('telefone') as HTMLInputElement;
       input.setCustomValidity('Informe seu WhatsApp com DDD.');
       input.reportValidity();
@@ -82,7 +91,7 @@ export function BlackLiveHero() {
           <form onSubmit={submit} className="black-live-form">
             <label htmlFor="live-nome">Nome completo<input id="live-nome" name="nome" autoComplete="name" placeholder="Seu nome" required /></label>
             <label htmlFor="live-email">E-mail<input id="live-email" name="email" type="email" autoComplete="email" placeholder="Seu melhor e-mail" required /></label>
-            <label htmlFor="live-telefone">WhatsApp com DDD<input id="live-telefone" name="telefone" type="tel" autoComplete="tel" placeholder="(11) 99999-9999" required onInput={event => event.currentTarget.setCustomValidity('')} /></label>
+            <label htmlFor="live-telefone">WhatsApp com DDD<input id="live-telefone" name="telefone" type="tel" inputMode="tel" autoComplete="tel-national" placeholder="(11) 99999-9999" maxLength={15} value={telephone} required onChange={event => { event.currentTarget.setCustomValidity(''); setTelephone(formatPhone(event.target.value)); }} /></label>
             <label htmlFor="live-formacao">Possui graduação completa?<select id="live-formacao" name="formacao" required value={graduated} onChange={event => setGraduated(event.target.value)}><option value="" disabled>Selecione</option><option>Sim</option><option>Não</option></select></label>
             {graduated === 'Sim' && <label htmlFor="live-area">Área de formação<input id="live-area" name="area" placeholder="Seu curso ou profissão" required /></label>}
             {status === 'error' && <p role="alert" className="black-live-error">Não foi possível enviar. Tente novamente.</p>}
